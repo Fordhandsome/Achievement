@@ -151,8 +151,8 @@ export default function ProjectsShowcase({ lang, onSelectProject }: Props) {
                         </span>
                         <span className="text-xs text-sky-700 mt-0.5">
                           {lang === 'en'
-                            ? 'Hardware/AV integration & automated room booking completed in 4 days'
-                            : 'ติดตั้งอุปกรณ์ห้องประชุมและทำระบบจองห้องผ่าน Teams เสร็จใน 4 วัน'}
+                            ? 'Conference room AV hardware setup & automated room booking in Microsoft Teams'
+                            : 'ตั้งค่าอุปกรณ์ห้องประชุมและทำระบบจองห้องประชุมอัตโนมัติผ่าน Microsoft Teams'}
                         </span>
                       </div>
                     )}

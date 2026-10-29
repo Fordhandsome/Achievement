@@ -17,8 +17,8 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
     {
       id: 'p-web-sop-create',
       category: 'webapp',
-      title: 'SOP Portal: 5-Step Create SOP Form (100% Readiness)',
-      subtitle: 'Guided web form for entering document control data with real-time completeness validation and Word export',
+      title: 'SOP Portal: 5-Step Create SOP Web Form',
+      subtitle: 'Web form for entering SOP document details with auto-draft saving, PDF preview, and direct approval submission',
       src: 'assets/sop-live-create.png',
       tag: 'Create SOP Web UI'
     },
@@ -26,31 +26,31 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       id: 'p-web-sop-edit',
       category: 'webapp',
       title: 'SOP Portal: Edit / Revision Workflow (Returned SOP)',
-      subtitle: 'Displays reviewer comments, annotation pins, revision number, and one-click re-submission to approver',
+      subtitle: 'Displays reviewer comments, annotation points, revision number, and a button to re-submit to the reviewer',
       src: 'assets/sop-live-edit.png',
       tag: 'Edit SOP Web UI'
     },
     {
       id: 'p-web-sop-audit',
       category: 'webapp',
-      title: 'SOP Portal: Automated 3-Signature & Completeness Audit',
-      subtitle: 'Verifies Issuer, Reviewer, and Approver signatures and form completeness before unlocking digital stamping',
+      title: 'SOP Portal: Approval & Returned Revision Queue',
+      subtitle: 'Tracks SOP documents pending review, pending approval, and returned for edits with a direct Edit SOP button',
       src: 'assets/sop-live-audit.png',
-      tag: 'Approval Audit UI'
+      tag: 'Approval Queue UI'
     },
     {
       id: 'p-web-sop-sig',
       category: 'webapp',
-      title: 'SOP Portal: Digital Signature Pad Modal',
-      subtitle: 'Allows approvers to draw or upload their official signature for SOP approval stamping',
+      title: 'SOP Portal: Digital Signature Settings Modal',
+      subtitle: 'Allows reviewers and approvers to draw or upload their electronic signature for SOP approval',
       src: 'assets/sop-live-signature.png',
       tag: 'Digital Signature UI'
     },
     {
       id: 'p-web-sop-jmeter',
       category: 'webapp',
-      title: 'Apache JMeter Load Test: 100 Concurrent Users (0% Error)',
-      subtitle: 'Stress-tested with 100 concurrent users and 1,100 total requests with 100% pass rate',
+      title: 'Apache JMeter Load Test: 100 Concurrent Users',
+      subtitle: 'Load-tested with 100 concurrent users and 1,100 requests (0% error rate)',
       src: 'assets/sop-jmeter-100users.png',
       tag: 'JMeter Load Test'
     },
@@ -139,8 +139,8 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
     {
       id: 'p-web-sop-create',
       category: 'webapp',
-      title: 'หน้าเว็บจริง: สร้างเอกสาร SOP 5 ขั้นตอน (ความครบถ้วน 100%)',
-      subtitle: 'หน้ากรอกข้อมูลควบคุมเอกสารพร้อมตรวจสอบความครบถ้วนแบบเรียลไทม์ก่อนดาวน์โหลดไฟล์ Word',
+      title: 'หน้าเว็บจริง: สร้างเอกสารวิธีการปฏิบัติงาน (SOP Generator)',
+      subtitle: 'หน้ากรอกข้อมูล SOP 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ',
       src: 'assets/sop-live-create.png',
       tag: 'Create SOP Web UI'
     },
@@ -148,17 +148,17 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       id: 'p-web-sop-edit',
       category: 'webapp',
       title: 'หน้าเว็บจริง: แก้ไขเอกสาร SOP เมื่อถูกตีกลับ (Revision)',
-      subtitle: 'แสดงข้อความคอมเมนต์จากผู้ตรวจ จุดที่ต้องแก้ไข เลขครั้งที่แก้ไข และปุ่มส่งอนุมัติใหม่',
+      subtitle: 'แสดงข้อความคอมเมนต์จากผู้ตรวจ จุดที่ต้องแก้ไข เลขครั้งที่แก้ไข และปุ่มส่งกลับผู้ลงนามเดิม',
       src: 'assets/sop-live-edit.png',
       tag: 'Edit SOP Web UI'
     },
     {
       id: 'p-web-sop-audit',
       category: 'webapp',
-      title: 'หน้าเว็บจริง: ตรวจเช็กลายเซ็น 3 ช่องและความสมบูรณ์ของฟอร์ม',
-      subtitle: 'ตรวจสอบลายมือชื่อ ผู้ออกเอกสาร ผู้ตรวจสอบ ผู้อนุมัติ และความครบถ้วนก่อนประทับตรา',
+      title: 'หน้าเว็บจริง: คิวพิจารณาอนุมัติและรายการส่งกลับแก้ไข',
+      subtitle: 'แสดงสถานะเอกสาร รอผู้ตรวจ รอผู้อนุมัติ และเอกสารที่ถูกส่งกลับพร้อมปุ่มกดแก้ไขเอกสาร',
       src: 'assets/sop-live-audit.png',
-      tag: 'Approval Audit UI'
+      tag: 'Approval Queue UI'
     },
     {
       id: 'p-web-sop-sig',
@@ -171,8 +171,8 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
     {
       id: 'p-web-sop-jmeter',
       category: 'webapp',
-      title: 'ผลทดสอบ Apache JMeter: รองรับผู้ใช้งานพร้อมกัน 100 Users',
-      subtitle: 'จำลองการเข้าใช้งานพร้อมกัน 100 คน ยิงทดสอบ 1,100 Requests ผ่าน 100% (0% Error)',
+      title: 'ผลทดสอบ Apache JMeter: ทดสอบผู้ใช้งานพร้อมกัน 100 Users',
+      subtitle: 'จำลองการเข้าใช้งานพร้อมกัน 100 คน ยิงทดสอบ 1,100 Requests (0% Error)',
       src: 'assets/sop-jmeter-100users.png',
       tag: 'JMeter Load Test'
     },
