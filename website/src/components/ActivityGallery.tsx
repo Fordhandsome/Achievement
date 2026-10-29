@@ -31,14 +31,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Edit SOP Web UI'
     },
     {
-      id: 'p-web-sop-sig',
-      category: 'webapp',
-      title: 'SOP Portal: Digital Signature Settings Modal',
-      subtitle: 'Allows reviewers and approvers to draw or upload their electronic signature for SOP approval',
-      src: 'assets/sop-live-signature.png',
-      tag: 'Digital Signature UI'
-    },
-    {
       id: 'p-web-sop-jmeter',
       category: 'webapp',
       title: 'Apache JMeter Load Test: 100 Concurrent Users',
@@ -143,14 +135,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'แสดงข้อความคอมเมนต์จากผู้ตรวจ จุดที่ต้องแก้ไข เลขครั้งที่แก้ไข และปุ่มส่งกลับผู้ลงนามเดิม',
       src: 'assets/sop-live-edit.png',
       tag: 'Edit SOP Web UI'
-    },
-    {
-      id: 'p-web-sop-sig',
-      category: 'webapp',
-      title: 'หน้าเว็บจริง: ตั้งค่าลายเซ็นดิจิทัล (Digital Signature)',
-      subtitle: 'หน้าต่างสำหรับวาดลายเซ็นบนหน้าจอหรืออัปโหลดไฟล์ลายเซ็นเพื่อใช้ในการอนุมัติ SOP',
-      src: 'assets/sop-live-signature.png',
-      tag: 'Digital Signature UI'
     },
     {
       id: 'p-web-sop-jmeter',

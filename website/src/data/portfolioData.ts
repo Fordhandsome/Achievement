@@ -40,10 +40,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-live-create.png',
           caption: 'Create SOP Screen (Entry): 5-step guided web form with auto-draft saving, real-time PDF preview, and direct submission for approval'
-        },
-        {
-          src: 'assets/sop-live-signature.png',
-          caption: 'Approval & E-Signature Screen: Electronic signature pad modal allowing reviewers and approvers to verify and stamp SOP documents'
         }
       ],
       shortDesc:
@@ -243,10 +239,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-live-create.png',
           caption: 'หน้ากรอกข้อมูลสร้างเอกสาร (Create SOP): กรอกข้อมูล 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ'
-        },
-        {
-          src: 'assets/sop-live-signature.png',
-          caption: 'หน้าอนุมัติและประทับลายเซ็นดิจิทัล: หน้าต่างสำหรับผู้ตรวจทานและผู้อนุมัติวาดลายเซ็นเพื่อประทับตราเอกสาร SOP'
         }
       ],
       shortDesc:
