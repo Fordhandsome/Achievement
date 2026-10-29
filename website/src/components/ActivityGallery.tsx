@@ -71,6 +71,14 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Dispatch Queue UI'
     },
     {
+      id: 'p-web-card-scanner',
+      category: 'webapp',
+      title: 'HACO Smart Scanner: Business Card AI Capture UI',
+      subtitle: 'Mobile web interface powered by Google Apps Script & Gemini AI to extract contact details from card photos into Google Sheets & Drive',
+      src: 'assets/haco-card-scanner.png',
+      tag: 'AI Card Scanner UI'
+    },
+    {
       id: 'p-speaker',
       category: 'training',
       title: 'Speaker: Internal Microsoft 365 Copilot Training',
@@ -175,6 +183,14 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'หน้าจัดการคิวคำขอเบิกสำหรับเจ้าหน้าที่ HR สแกนบาร์โค้ดจ่ายของ',
       src: 'assets/hr-live-queue.png',
       tag: 'Dispatch Queue UI'
+    },
+    {
+      id: 'p-web-card-scanner',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: สแกนนามบัตรอัจฉริยะ (HACO Smart Scanner)',
+      subtitle: 'เว็บแอปพลิเคชันบนมือถือพัฒนาด้วย Google Apps Script และ Gemini AI ถ่ายภาพนามบัตรเพื่อสกัดข้อมูลติดต่อลง Google Sheets และ Drive อัตโนมัติ',
+      src: 'assets/haco-card-scanner.png',
+      tag: 'AI Card Scanner UI'
     },
     {
       id: 'p-speaker',
