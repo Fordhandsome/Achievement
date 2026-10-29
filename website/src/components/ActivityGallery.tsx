@@ -5,7 +5,7 @@ import { Language } from '../data/portfolioData';
 
 export interface GalleryPhoto {
   id: string;
-  category: 'webapp' | 'workflow' | 'training' | 'dashboard';
+  category: 'webapp' | 'training' | 'dashboard';
   title: string;
   subtitle: string;
   src: string;
@@ -45,46 +45,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'Load-tested with 100 concurrent users and 1,100 requests (0% error rate)',
       src: 'assets/sop-jmeter-100users.png',
       tag: 'JMeter Load Test'
-    },
-    {
-      id: 'p-wf-sop-master',
-      category: 'workflow',
-      title: 'SOP Portal: Master System Architecture Flowchart (Draw.io)',
-      subtitle: 'Architectural flowchart with 4 swimlanes (User, Reviewer, Approver, Database) and automated status routing',
-      src: 'assets/sop-drawio-workflow.png',
-      tag: 'Draw.io Architecture'
-    },
-    {
-      id: 'p-wf-sop-lifecycle',
-      category: 'workflow',
-      title: 'SOP Portal: Operational Process & Quality Gate Review (Draw.io)',
-      subtitle: 'End-to-end lifecycle: form creation, document checklist gate, reviewer revision loops, and digital stamping',
-      src: 'assets/sop-dark-drawio-workflow.png',
-      tag: 'Draw.io Lifecycle'
-    },
-    {
-      id: 'p-wf-hr-stock',
-      category: 'workflow',
-      title: 'Haco P&C Stock: Barcode Requisition & PO-Linked Flowchart (Draw.io)',
-      subtitle: 'Complete system workflow: Employee requisition, inventory auto-reservation, PO stock-in, and barcode dispatch',
-      src: 'assets/hr-drawio-workflow.png',
-      tag: 'Draw.io Workflow'
-    },
-    {
-      id: 'p-wf-doc-builder',
-      category: 'workflow',
-      title: 'Automated Document Builder Architecture (Draw.io)',
-      subtitle: 'System workflow diagram for automated template document generation',
-      src: 'assets/doc-builder-drawio-workflow.png',
-      tag: 'Draw.io Architecture'
-    },
-    {
-      id: 'p-wf-smart-scanner',
-      category: 'workflow',
-      title: 'HACO Smart Scanner V30: Multi-Model AI Architecture (Draw.io)',
-      subtitle: '4-swimlane architecture: Web Client, Google Apps Script Controller, Gemini 2.5 Flash / Gemma 3 Engine, and Google Workspace Store',
-      src: 'assets/smart-scanner-drawio-workflow.png',
-      tag: 'Draw.io Architecture'
     },
     {
       id: 'p-web-hr-sig',
@@ -201,46 +161,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'JMeter Load Test'
     },
     {
-      id: 'p-wf-sop-master',
-      category: 'workflow',
-      title: 'ผังสถาปัตยกรรมระบบ SOP: Master Flowchart & Swimlanes (Draw.io)',
-      subtitle: 'แผนภาพ 4 สายงาน (User, Reviewer, Approver, Database) แสดงขั้นตอนการสร้าง ตรวจทาน และอนุมัติ',
-      src: 'assets/sop-drawio-workflow.png',
-      tag: 'Draw.io Architecture'
-    },
-    {
-      id: 'p-wf-sop-lifecycle',
-      category: 'workflow',
-      title: 'ผังขั้นตอนปฏิบัติการ SOP: Process & Quality Gate (Draw.io)',
-      subtitle: 'ผังวงจรชีวิตเอกสาร: สร้างเอกสาร 5 ขั้นตอน, จุดตรวจทาน Checklist, การส่งกลับแก้ไข (Revision) และประทับตรา',
-      src: 'assets/sop-dark-drawio-workflow.png',
-      tag: 'Draw.io Lifecycle'
-    },
-    {
-      id: 'p-wf-hr-stock',
-      category: 'workflow',
-      title: 'ผังระบบเบิกพัสดุและบาร์โค้ดสต็อก Haco P&C (Draw.io)',
-      subtitle: 'ขั้นตอนการขอเบิกพัสดุ จองสต็อกล่วงหน้า การรับเข้าสต็อกผูก PO และการยิงบาร์โค้ดตัดจ่าย',
-      src: 'assets/hr-drawio-workflow.png',
-      tag: 'Draw.io Workflow'
-    },
-    {
-      id: 'p-wf-doc-builder',
-      category: 'workflow',
-      title: 'ผังสถาปัตยกรรมระบบสร้างเอกสารอัตโนมัติ (Draw.io)',
-      subtitle: 'แผนภาพขั้นตอนการสร้างเอกสารอัตโนมัติจากแม่แบบและฐานข้อมูล',
-      src: 'assets/doc-builder-drawio-workflow.png',
-      tag: 'Draw.io Architecture'
-    },
-    {
-      id: 'p-wf-smart-scanner',
-      category: 'workflow',
-      title: 'ผังสถาปัตยกรรม HACO Smart Scanner V30 (Draw.io)',
-      subtitle: 'ผังระบบ 4 สายงาน: Web Client, Google Apps Script Controller, Gemini 2.5 Flash / Gemma 3 Engine, Google Workspace Store',
-      src: 'assets/smart-scanner-drawio-workflow.png',
-      tag: 'Draw.io Architecture'
-    },
-    {
       id: 'p-web-hr-sig',
       category: 'webapp',
       title: 'หน้าเว็บจริง: สรุปรายการขอเบิกพัสดุและเซ็นชื่ออิเล็กทรอนิกส์',
@@ -336,16 +256,14 @@ export default function ActivityGallery({ lang }: Props) {
   const photoTabs =
     lang === 'en'
       ? [
-          { id: 'all', label: `All Items (${photos.length})` },
-          { id: 'webapp', label: `Live Web UI & JMeter (${photos.filter((p) => p.category === 'webapp').length})` },
-          { id: 'workflow', label: `Draw.io Workflows (${photos.filter((p) => p.category === 'workflow').length})` },
+          { id: 'all', label: `All Screens & Photos (${photos.length})` },
+          { id: 'webapp', label: `Live Web UI & Load Test (${photos.filter((p) => p.category === 'webapp').length})` },
           { id: 'training', label: `Copilot Training Photos (${photos.filter((p) => p.category === 'training').length})` },
           { id: 'dashboard', label: `Power BI & SAP (${photos.filter((p) => p.category === 'dashboard').length})` }
         ]
       : [
           { id: 'all', label: `ทั้งหมด (${photos.length})` },
           { id: 'webapp', label: `หน้าจอเว็บจริง & JMeter (${photos.filter((p) => p.category === 'webapp').length})` },
-          { id: 'workflow', label: `ผังระบบ Draw.io (${photos.filter((p) => p.category === 'workflow').length})` },
           { id: 'training', label: `ภาพถ่ายการสอน Copilot (${photos.filter((p) => p.category === 'training').length})` },
           { id: 'dashboard', label: `Power BI & SAP (${photos.filter((p) => p.category === 'dashboard').length})` }
         ];
@@ -376,8 +294,8 @@ export default function ActivityGallery({ lang }: Props) {
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-2">
             {lang === 'en'
-              ? 'Real web application screens, Draw.io system architecture workflows, JMeter load tests, and genuine event photographs.'
-              : 'แสดงหน้าจอ Web Application จริง, ผังสถาปัตยกรรมระบบ Draw.io, ผลทดสอบ JMeter และภาพถ่ายการจัดอบรมจริง'}
+              ? 'Only real web application screens (using anonymized demo accounts), JMeter load test results, and real event photographs are shown.'
+              : 'แสดงเฉพาะหน้าจอ Web Application จริง (ด้วยข้อมูลจำลอง), ผลทดสอบ JMeter และภาพถ่ายการจัดอบรมจริง'}
           </p>
         </div>
 
@@ -424,9 +342,7 @@ export default function ActivityGallery({ lang }: Props) {
                     src={photo.src}
                     alt={photo.title}
                     loading="lazy"
-                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
-                      photo.category === 'workflow' ? 'object-contain p-2 bg-white' : 'object-cover object-top'
-                    }`}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute top-2.5 left-2.5">
                     <span className="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-blue-600 text-white shadow-sm">

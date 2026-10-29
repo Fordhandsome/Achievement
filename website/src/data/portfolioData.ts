@@ -44,10 +44,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-live-signature.png',
           caption: 'Approval & E-Signature Screen: Electronic signature pad modal allowing reviewers and approvers to verify and stamp SOP documents'
-        },
-        {
-          src: 'assets/sop-drawio-workflow.png',
-          caption: 'System Workflow Diagram (Draw.io): Detailed 4-swimlane lifecycle (User, Reviewer, Approver, and Database / Automation routing)'
         }
       ],
       shortDesc:
@@ -90,10 +86,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/hr-live-queue.png',
           caption: 'Approval & Dispatch Screen: HR staff review pending requisitions and scan item barcodes to approve dispatch'
-        },
-        {
-          src: 'assets/hr-drawio-workflow.png',
-          caption: 'System Workflow Diagram (Draw.io): End-to-end flowchart from employee request, inventory reservation, to barcode verification'
         }
       ],
       shortDesc:
@@ -129,10 +121,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/haco-card-scanner.png',
           caption: 'Live Web UI: Employee authentication and smart card capture interface for mobile & desktop browsers'
-        },
-        {
-          src: 'assets/smart-scanner-drawio-workflow.png',
-          caption: 'System Workflow Diagram (Draw.io): 4-swimlane architecture covering Web Client, Google Apps Script Controller, Gemini 2.5 Flash / Gemma 3 Fallback Engine, and Google Workspace Store'
         }
       ],
       shortDesc:
@@ -259,10 +247,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-live-signature.png',
           caption: 'หน้าอนุมัติและประทับลายเซ็นดิจิทัล: หน้าต่างสำหรับผู้ตรวจทานและผู้อนุมัติวาดลายเซ็นเพื่อประทับตราเอกสาร SOP'
-        },
-        {
-          src: 'assets/sop-drawio-workflow.png',
-          caption: 'ผังสถาปัตยกรรมระบบการทำงาน (Draw.io): แผนภาพ 4 สายงาน (ผู้จัดทำ, ผู้ตรวจ, ผู้อนุมัติ, ฐานข้อมูล) แสดงวงจรการทำงานครบวงจร'
         }
       ],
       shortDesc:
@@ -305,10 +289,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/hr-live-queue.png',
           caption: 'หน้าผู้อนุมัติและตัดจ่ายพัสดุ: เจ้าหน้าที่ HR ตรวจสอบคิวคำขอและใช้ปืนยิงบาร์โค้ดสแกนจ่ายของ'
-        },
-        {
-          src: 'assets/hr-drawio-workflow.png',
-          caption: 'ผังระบบงาน (Draw.io): แผนภาพขั้นตอนการขอเบิกพัสดุ จองยอดสต็อกล่วงหน้า การรับเข้าสต็อกผูก PO และการยิงบาร์โค้ดจ่ายของ'
         }
       ],
       shortDesc:
@@ -344,10 +324,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/haco-card-scanner.png',
           caption: 'หน้าจอเว็บจริง: ระบบยืนยันตัวตนพนักงานและอินเทอร์เฟซสแกนนามบัตรอัจฉริยะ รองรับทั้งเบราว์เซอร์มือถือและคอมพิวเตอร์'
-        },
-        {
-          src: 'assets/smart-scanner-drawio-workflow.png',
-          caption: 'ผังสถาปัตยกรรมระบบการทำงาน (Draw.io): แผนภาพ 4 สายงาน (Web Client, Google Apps Script Controller, Gemini / Gemma AI Engine, Google Workspace Store)'
         }
       ],
       shortDesc:
