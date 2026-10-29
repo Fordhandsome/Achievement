@@ -64,7 +64,7 @@ export default function App() {
                 Thamawut Dejaroenviroon
               </span>
               <span className="text-xs text-sky-600 font-medium block">
-                AI Solution & Process Automation Engineer
+                Data Analyst & Technology • AI Solution & Automation
               </span>
             </div>
           </div>
@@ -142,8 +142,8 @@ export default function App() {
                 </h1>
                 <p className="text-sm font-semibold text-sky-700 mt-0.5">
                   {lang === 'en'
-                    ? 'AI Solution & Process Automation Engineer • Full-Stack Internal Tools & BI'
-                    : 'AI Solution & Process Automation Specialist • พัฒนาเว็บแอปและระบบอัตโนมัติในองค์กร'}
+                    ? 'Data Analyst & Technology • AI Solution & Process Automation Specialist'
+                    : 'Data Analyst & Technology • AI Solution & Process Automation Specialist'}
                 </p>
                 <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl leading-relaxed">
                   {lang === 'en'

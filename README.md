@@ -1,6 +1,6 @@
 # Thamawut Dejaroenviroon (Ford) — Portfolio
 
-**AI Solution & Process Automation Specialist**  
+**Data Analyst & Technology | AI Solution & Process Automation Specialist**  
 B.Eng. in Chemical Engineering (Second-Class Honors, GPA: 3.35) — KMUTNB  
 Vocational Certificate in Electrical & Electronics — Thai-German Pre-Engineering School, KMUTNB  
 
