@@ -31,6 +31,22 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Edit SOP Web UI'
     },
     {
+      id: 'p-web-sop-audit',
+      category: 'webapp',
+      title: 'SOP Portal: Multi-Tier Audit & E-Approval Queue (Data Masked)',
+      subtitle: 'Reviewer verification checklist, digital approval queue, and stamp workflow (confidential document data masked)',
+      src: 'assets/sop-web-audit-censored.png',
+      tag: 'Audit Queue UI'
+    },
+    {
+      id: 'p-web-sop-library',
+      category: 'webapp',
+      title: 'SOP Portal: Central Document Library (Data Masked)',
+      subtitle: 'Departmental folder navigation and document search archive (all warehouse/document records censored for privacy)',
+      src: 'assets/sop-web-library-censored.png',
+      tag: 'Library Archive UI'
+    },
+    {
       id: 'p-web-sop-jmeter',
       category: 'webapp',
       title: 'Apache JMeter Load Test: 100 Concurrent Users',
@@ -69,6 +85,14 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'Web interface for HR staff to verify and auto-approve outbound requisitions via barcode scanner',
       src: 'assets/hr-live-queue.png',
       tag: 'Dispatch Queue UI'
+    },
+    {
+      id: 'p-web-hr-stock-dashboard',
+      category: 'webapp',
+      title: 'Haco P&C Stock: Real-Time Inventory & Reservation Dashboard',
+      subtitle: 'Real-time overview of current warehouse stock, reserved items, and automated reorder alerts',
+      src: 'assets/hr-web-stock-on-hand.png',
+      tag: 'Stock Dashboard UI'
     },
     {
       id: 'p-web-card-scanner',
@@ -145,6 +169,22 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Edit SOP Web UI'
     },
     {
+      id: 'p-web-sop-audit',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: ระบบตรวจสอบเอกสารและอนุมัติตามลำดับขั้น (เซ็นเซอร์ข้อมูล)',
+      subtitle: 'คิวตรวจทานเอกสาร ตรวจสอบความถูกต้องของเนื้อหา พร้อมปุ่มประทับตราดิจิทัล (เซ็นเซอร์ข้อมูลเพื่อความปลอดภัย)',
+      src: 'assets/sop-web-audit-censored.png',
+      tag: 'Audit Queue UI'
+    },
+    {
+      id: 'p-web-sop-library',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: คลังเอกสาร SOP กลางของบริษัท (เซ็นเซอร์ข้อมูลคลังทั้งหมด)',
+      subtitle: 'ระบบจัดเก็บเอกสาร SOP แยกตามแผนกสำหรับพนักงานค้นหา (เซ็นเซอร์ข้อมูลเอกสารและคลังทั้งหมด 100% เพื่อความปลอดภัย)',
+      src: 'assets/sop-web-library-censored.png',
+      tag: 'Library Archive UI'
+    },
+    {
       id: 'p-web-sop-jmeter',
       category: 'webapp',
       title: 'ผลทดสอบ Apache JMeter: ทดสอบผู้ใช้งานพร้อมกัน 100 Users',
@@ -183,6 +223,14 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'หน้าจัดการคิวคำขอเบิกสำหรับเจ้าหน้าที่ HR สแกนบาร์โค้ดจ่ายของ',
       src: 'assets/hr-live-queue.png',
       tag: 'Dispatch Queue UI'
+    },
+    {
+      id: 'p-web-hr-stock-dashboard',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: แดชบอร์ดตรวจสอบสต็อกพัสดุ (Stock On Hand Dashboard)',
+      subtitle: 'แดชบอร์ดสรุปยอดพัสดุคงเหลือในคลัง ยอดที่ถูกจองไว้ และระบบแจ้งเตือนสต็อกขั้นต่ำแบบเรียลไทม์',
+      src: 'assets/hr-web-stock-on-hand.png',
+      tag: 'Stock Dashboard UI'
     },
     {
       id: 'p-web-card-scanner',

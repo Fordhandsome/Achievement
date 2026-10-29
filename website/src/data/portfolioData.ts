@@ -40,6 +40,22 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-live-create.png',
           caption: 'Create SOP Screen (Entry): 5-step guided web form with auto-draft saving, real-time PDF preview, and direct submission for approval'
+        },
+        {
+          src: 'assets/sop-live-edit.png',
+          caption: 'Edit / Revision SOP Screen: Document revision workflow displaying reviewer comments, change points, and re-submission to approver'
+        },
+        {
+          src: 'assets/sop-web-audit-censored.png',
+          caption: 'Audit & Approval Queue Screen (Censored): 3-tier reviewer checklist and digital approval queue (confidential document data masked)'
+        },
+        {
+          src: 'assets/sop-web-library-censored.png',
+          caption: 'Document Library Archive Screen (Censored): Departmental folder library for company procedures (all internal document records censored for privacy)'
+        },
+        {
+          src: 'assets/sop-jmeter-100users.png',
+          caption: 'Apache JMeter Load Testing: Verified 100 concurrent users across 1,100 requests with 0% error rate'
         }
       ],
       shortDesc:
@@ -61,7 +77,7 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'Load-tested with Apache JMeter at 100 concurrent users (1,100 requests, 0% error rate)'
       ],
       techStack: ['Next.js', 'React', 'TypeScript', 'FastAPI (Python)', 'Prisma', 'PDF-Lib', 'Apache JMeter'],
-      privacyNote: 'All screenshots use test accounts (Admin 1 / Demo) and do not display internal company library files.'
+      privacyNote: 'All internal company document details, procedure texts, and warehouse records are strictly censored to ensure data privacy.'
     },
     {
       id: 'hr-stock',
@@ -82,6 +98,10 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/hr-live-queue.png',
           caption: 'Approval & Dispatch Screen: HR staff review pending requisitions and scan item barcodes to approve dispatch'
+        },
+        {
+          src: 'assets/hr-web-stock-on-hand.png',
+          caption: 'Inventory Dashboard (Stock On Hand): Real-time inventory overview showing available quantities, reservation locks, and minimum threshold alerts'
         }
       ],
       shortDesc:
@@ -139,9 +159,7 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'Analytics Dashboard & Inline Editor: Includes Chart.js analytics for department scans, search history, and modal inline record editing',
         'Unit Test Suite: Built-in 7-suite automated unit tests covering authentication, database CRUD, and fallback routines'
       ],
-      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript'],
-      liveUrl: 'https://script.google.com/macros/s/AKfycbxWMx3SEmyPvN6GiRFDCS2j-PuGGz66TgX9sq5bERcYhaHVfESCebi14limXNFElQML/exec',
-      liveLabel: 'Open Live Web App ↗'
+      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript']
     },
     {
       id: 'ceo-powerbi',
@@ -238,7 +256,23 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       gallery: [
         {
           src: 'assets/sop-live-create.png',
-          caption: 'หน้ากรอกข้อมูลสร้างเอกสาร (Create SOP): กรอกข้อมูล 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ'
+          caption: 'หน้าสร้างเอกสาร SOP (Create SOP): หน้ากรอกข้อมูล 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ'
+        },
+        {
+          src: 'assets/sop-live-edit.png',
+          caption: 'หน้าแก้ไขเอกสาร SOP เมื่อถูกตีกลับ (Revision): แสดงข้อเสนอแนะจากผู้ตรวจ จุดที่ต้องแก้ไข และปุ่มส่งกลับผู้ลงนามเดิม'
+        },
+        {
+          src: 'assets/sop-web-audit-censored.png',
+          caption: 'หน้าตรวจอนุมัติและประทับตราดิจิทัล (เซ็นเซอร์ข้อมูล): ระบบคิวตรวจสอบความครบถ้วน ลายเซ็น 3 ระดับ และการประทับตราดิจิทัล (เซ็นเซอร์ข้อมูลเพื่อความปลอดภัย)'
+        },
+        {
+          src: 'assets/sop-web-library-censored.png',
+          caption: 'หน้าคลังเอกสาร SOP (เซ็นเซอร์ข้อมูลคลังทั้งหมด): คลังจัดเก็บเอกสารแยกตามแผนกสำหรับพนักงาน (เซ็นเซอร์ข้อมูลเอกสารทั้งหมด 100% เพื่อความปลอดภัย)'
+        },
+        {
+          src: 'assets/sop-jmeter-100users.png',
+          caption: 'ผลทดสอบ Apache JMeter: ทดสอบผู้ใช้งานพร้อมกัน 100 Users ยิง 1,100 Requests ผ่าน 100% (0% Error)'
         }
       ],
       shortDesc:
@@ -260,7 +294,7 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'ทดสอบการรองรับผู้ใช้งานด้วย Apache JMeter ที่ 100 Concurrent Users (1,100 Requests)'
       ],
       techStack: ['Next.js', 'React', 'TypeScript', 'FastAPI (Python)', 'Prisma', 'PDF-Lib', 'Apache JMeter'],
-      privacyNote: 'ภาพหน้าจอทั้งหมดใช้บัญชีทดสอบ (Admin 1 / Demo) และไม่แสดงข้อมูลในคลังเอกสารภายในของบริษัท'
+      privacyNote: 'ข้อมูลเนื้อหาเอกสาร รายละเอียดขั้นตอน และข้อมูลคลังเอกสารภายในทั้งหมด ได้รับการเซ็นเซอร์ 100% เพื่อปกป้องข้อมูลความลับขององค์กร'
     },
     {
       id: 'hr-stock',
@@ -281,6 +315,10 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/hr-live-queue.png',
           caption: 'หน้าผู้อนุมัติและตัดจ่ายพัสดุ: เจ้าหน้าที่ HR ตรวจสอบคิวคำขอและใช้ปืนยิงบาร์โค้ดสแกนจ่ายของ'
+        },
+        {
+          src: 'assets/hr-web-stock-on-hand.png',
+          caption: 'แดชบอร์ดจัดการสต็อก (Stock On Hand Dashboard): หน้าแสดงรายการสต็อกคงเหลือจริง ยอดที่ถูกจอง (Reservation Lock) และแจ้งเตือนสต็อกขั้นต่ำ'
         }
       ],
       shortDesc:
@@ -338,9 +376,7 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'แดชบอร์ดสถิติและระบบแก้ไข: หน้า Dashboard สรุปข้อมูลด้วย Chart.js พร้อมระบบค้นหาย้อนหลังและหน้าต่างแก้ไขข้อมูล (Inline Edit)',
         'ชุดทดสอบระบบอัตโนมัติ (Unit Tests): เขียนฟังก์ชันทดสอบ 7 ระบบหลัก (Auth, CRUD, Dashboard, Sheet) มั่นใจก่อนปล่อยใช้งานจริง'
       ],
-      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript'],
-      liveUrl: 'https://script.google.com/macros/s/AKfycbxWMx3SEmyPvN6GiRFDCS2j-PuGGz66TgX9sq5bERcYhaHVfESCebi14limXNFElQML/exec',
-      liveLabel: 'เปิดเว็บแอปจริง ↗'
+      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript']
     },
     {
       id: 'ceo-powerbi',
