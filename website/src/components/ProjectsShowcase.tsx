@@ -64,27 +64,36 @@ export default function ProjectsShowcase({ lang, onSelectProject }: Props) {
   };
 
   return (
-    <section id="projects" className="py-10 sm:py-14 relative z-10">
+    <section id="projects" className="py-8 sm:py-12 relative z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 border border-sky-200 text-sky-800 text-xs font-bold mb-3">
-            <FolderKanban className="w-3.5 h-3.5 text-sky-600" />
-            <span>
+        {/* Hero Banner with Real Copilot Workshop Background */}
+        <div className="relative rounded-3xl overflow-hidden mb-9 border border-sky-200/80 shadow-xl">
+          <img
+            src="assets/copilot-group.jpg"
+            alt="AI for Modern Workplace Workshop"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-blue-950/70 backdrop-blur-[2px]" />
+
+          <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-14 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/20 border border-sky-300/40 text-sky-200 text-xs font-bold mb-3 backdrop-blur-md">
+              <FolderKanban className="w-3.5 h-3.5 text-sky-300" />
+              <span>
+                {lang === 'en'
+                  ? 'PORTFOLIO • DELIVERED ENTERPRISE PROJECTS'
+                  : 'PORTFOLIO • ผลงานที่พัฒนาและใช้งานจริง'}
+              </span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              {lang === 'en' ? 'Delivered Systems ' : 'สรุปผลงานที่ทำจริง '}
+              <span className="text-sky-300">Web App • SAP BI • AI & IT</span>
+            </h1>
+            <p className="text-slate-200 text-sm sm:text-base mt-2.5 leading-relaxed">
               {lang === 'en'
-                ? 'PORTFOLIO • DELIVERED ENTERPRISE PROJECTS'
-                : 'PORTFOLIO • ผลงานที่พัฒนาและใช้งานจริง'}
-            </span>
+                ? 'Production web applications powered by Gemini & Gemma AI, automated SAP/Power BI dashboards, and corporate Microsoft Copilot training. Click any card or thumbnail below to inspect real system screens.'
+                : 'รวมโปรเจกต์เว็บแอปพลิเคชันที่ขับเคลื่อนด้วย Gemini & Gemma AI แดชบอร์ดเชื่อมต่อ SAP และงานฝึกอบรม Microsoft Copilot พร้อมภาพหน้าจอจากระบบจริง'}
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            {lang === 'en' ? 'Delivered Systems ' : 'สรุปผลงานที่ทำจริง '}
-            <span className="gradient-text-blue">Web App • SAP BI • AI & IT</span>
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
-            {lang === 'en'
-              ? 'Production web applications, automated SAP/Power BI dashboards, and corporate AI enablement. Click any card or thumbnail to inspect real system screens.'
-              : 'รวมโปรเจกต์เว็บแอปพลิเคชัน แดชบอร์ดเชื่อมต่อ SAP และงานฝึกอบรม AI พร้อมภาพหน้าจอจากเว็บจริง'}
-          </p>
         </div>
 
         {/* Category Filter Buttons */}
@@ -191,7 +200,7 @@ export default function ProjectsShowcase({ lang, onSelectProject }: Props) {
                       <span className="text-[10px] font-extrabold uppercase text-slate-500 shrink-0">
                         {lang === 'en' ? 'Preview:' : 'เลือกดูรูป:'}
                       </span>
-                      {project.gallery.slice(0, 5).map((img) => {
+                      {project.gallery.map((img) => {
                         const isSelected =
                           (activeCardPhotos[project.id] || project.coverImage) === img.src;
 

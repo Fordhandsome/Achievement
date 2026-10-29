@@ -31,45 +31,77 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
   en: [
     {
       id: 'sop-generator',
-      title: 'SOP Generator, Revision & Digital Approval Web Portal',
-      subtitle: 'Web application for creating, editing (revision), reviewing, and approving SOP documents online',
-      badge: 'Web App • Document Workflow',
+      title: 'SOP Generator, Revision & Digital Approval Web Portal (Gemini & Gemma AI)',
+      subtitle: 'AI-powered web application using Google Gemini Flash & Gemma Multi-Model AI for creating, auditing, revising, and approving SOP documents online',
+      badge: 'Web App • Gemini & Gemma AI',
       category: 'webapp',
       coverImage: 'assets/sop-live-create.png',
       gallery: [
         {
           src: 'assets/sop-live-create.png',
-          caption: 'Create SOP Screen (Entry): 5-step guided web form with auto-draft saving, real-time PDF preview, and direct submission for approval'
+          caption: 'Step 1 — Document Info: Guided web form with auto-draft saving and real-time readiness score'
+        },
+        {
+          src: 'assets/sop-step2-responsibility.png',
+          caption: 'Step 2 — 3-Tier Responsibility: Assigning Issuer, Reviewer, and Approver roles with Issuer Lock'
+        },
+        {
+          src: 'assets/sop-step3-content.png',
+          caption: 'Step 3 — SOP Main Content: Structured inputs for Objectives, Tools/Equipment, and Operators'
+        },
+        {
+          src: 'assets/sop-step4-procedure.png',
+          caption: 'Step 4 — Work Procedure & AI Copilot: Step-by-step work instructions assisted by Gemini / Gemma AI'
+        },
+        {
+          src: 'assets/sop-step5-export.png',
+          caption: 'Step 5 — References & 100% Readiness: Completeness verification before Word/PDF generation'
+        },
+        {
+          src: 'assets/sop-live-pdf-preview.png',
+          caption: 'Real-Time PDF Preview: Instant preview rendered directly from the company ISO Word template'
+        },
+        {
+          src: 'assets/sop-live-queue.png',
+          caption: 'Approval & Stamp Queue: Tracking documents across Pending Review, Pending Approval, and Returned states'
+        },
+        {
+          src: 'assets/sop-live-pin-comment.png',
+          caption: 'Reviewer Pin Annotation Workstation: Interactive PDF viewer where reviewers drop pin comments on specific lines (personal names masked)'
+        },
+        {
+          src: 'assets/sop-live-returned-view.png',
+          caption: 'Returned Document Feedback View: Displays reviewer pin locations, rejection reasons, and re-submission controls (personal names masked)'
         },
         {
           src: 'assets/sop-live-edit.png',
-          caption: 'Edit / Revision SOP Screen: Document revision workflow displaying reviewer comments, change points, and re-submission to approver'
+          caption: 'Inline Edit / Revision SOP Screen: Editing returned SOP content alongside reviewer comments before re-submitting'
         },
         {
           src: 'assets/sop-web-library-censored.png',
-          caption: 'Document Library Archive Screen: Departmental folder library for company procedures (department names masked for privacy)'
+          caption: 'Central SOP Document Library: Departmental folder archive for approved SOPs (department names masked for privacy)'
         }
       ],
       shortDesc:
-        'Built an internal web application (Next.js, React, TypeScript, FastAPI) to standardize SOP creation, handle returned document edits (Revision / Edit SOP), and manage multi-step electronic approvals.',
-      impactSummary: 'Standardizes SOP creation & revision on the web • Multi-step approval queue • Tested with JMeter (100 users)',
+        'Built an internal web application (Next.js, React, TypeScript, FastAPI) powered by Google Gemini AI (Gemini 3.5 / 2.5 Flash) and Gemma Multi-Model AI (Gemma 4 31B-IT) to assist in drafting SOP procedures, run automated pre-submission document & signature audits, handle returned document edits (Revision / Edit SOP), and manage 3-tier electronic approvals.',
+      impactSummary: 'Gemini & Gemma AI Copilot + Pre-Submission Audit • 5-Step Create & Revision Workflow • JMeter Tested (100 Users)',
       metrics: [
-        { label: 'Workflow', value: 'Create & Edit SOP' },
-        { label: 'Sign-off', value: '3-Step Approval' },
+        { label: 'AI Engine', value: 'Gemini + Gemma AI' },
+        { label: 'Workflow', value: 'Create, Audit & Edit' },
         { label: 'Load Test', value: '100 Users (JMeter)' }
       ],
       situation:
-        'Previously, formatting SOP documents and tracking revisions across departments required manual file edits and physical routing for signatures.',
+        'Previously, drafting SOP documents, checking formatting completeness, and routing revisions across departments required manual Word edits and physical paper sign-offs.',
       solution:
-        'Developed a web portal where staff fill out a 5-step guided SOP form, preview the generated PDF in real time, submit directly into a 3-role approval queue, and edit returned documents inline when reviewers request changes.',
+        'Developed a full-stack web portal integrating Google Gemini Flash (with automatic multi-model fallback to Gemma 4 31B-IT) to help draft standardized SOP content and audit documents prior to submission, combined with a 5-step guided builder, real-time PDF preview, interactive pin-comment review workstation, inline revision editor, and departmental library.',
       keyFeatures: [
-        '5-Step Create SOP Web Form with auto-save draft, real-time PDF preview, and direct submission for approval',
-        'Inline Edit / Revision SOP workflow displaying reviewer comments and annotation points when a document is returned',
-        'Approval Queue tracking status across Reviewer and Approver stages with electronic signature and stamp support',
-        'Load-tested with Apache JMeter at 100 concurrent users (1,100 requests, 0% error rate)'
+        'Multi-Model AI Copilot & Pre-Submission Audit: Uses Google Gemini Flash (3.5 / 2.5 Flash) and Gemma 4 31B-IT to assist SOP drafting, check typos/completeness, and verify 3-tier signatures',
+        '5-Step Guided SOP Builder (Document Info, 3-Tier Responsibility, Content, Procedure, References) with live readiness percentage and real-time PDF preview',
+        'Interactive Pin-Comment Review & Inline Revision Workflow: Reviewers pin comments directly onto PDF pages; issuers edit and re-submit online',
+        'Central Departmental Document Library and Apache JMeter verification at 100 concurrent users (1,100 requests, 0% error rate)'
       ],
-      techStack: ['Next.js', 'React', 'TypeScript', 'FastAPI (Python)', 'Prisma', 'PDF-Lib', 'Apache JMeter'],
-      privacyNote: 'All internal company document details, procedure texts, and warehouse records are strictly censored to ensure data privacy.'
+      techStack: ['Next.js', 'React', 'TypeScript', 'FastAPI (Python)', 'Gemini Flash AI', 'Gemma Multi-Model AI', 'Prisma', 'PDF-Lib', 'Apache JMeter'],
+      privacyNote: 'All internal company document details, personal names, and department folder names are strictly censored to ensure data privacy.'
     },
     {
       id: 'hr-stock',
@@ -77,23 +109,23 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'Internal web tool for office supply requisitions, electronic signatures, and barcode stock tracking',
       badge: 'Web App • Barcode & Stock',
       category: 'webapp',
-      coverImage: 'assets/hr-live-inbound.png',
+      coverImage: 'assets/hr-web-stock-on-hand.png',
       gallery: [
         {
-          src: 'assets/hr-live-inbound.png',
-          caption: 'Item Entry Screen (Stock-In): Form for linking incoming items to PO numbers and recording inventory quantities'
+          src: 'assets/hr-web-stock-on-hand.png',
+          caption: 'Inventory Dashboard (Stock On Hand): Real-time inventory overview showing available quantities, reservation locks, and minimum threshold alerts (stock items masked)'
         },
         {
           src: 'assets/hr-live-signature.png',
-          caption: 'Requester Screen & E-Signature: Employees review requested items and sign directly on screen before submission'
+          caption: 'Requester Screen & E-Signature: Employees review requested items and sign directly on screen before submission (item names masked)'
+        },
+        {
+          src: 'assets/hr-live-inbound.png',
+          caption: 'Approved & Dispatched Requisition Queue: HR dispatch log tracking approved requisitions and auto-approval status (employee names & IDs masked)'
         },
         {
           src: 'assets/hr-live-queue.png',
-          caption: 'Approval & Dispatch Screen: HR staff review pending requisitions and scan item barcodes to approve dispatch'
-        },
-        {
-          src: 'assets/hr-web-stock-on-hand.png',
-          caption: 'Inventory Dashboard (Stock On Hand): Real-time inventory overview showing available quantities, reservation locks, and minimum threshold alerts'
+          caption: 'Pending Barcode Dispatch Queue: HR staff interface for scanning item barcodes to verify and approve pending outbound requests'
         }
       ],
       shortDesc:
@@ -107,19 +139,19 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       situation:
         'Tracking office supply requisitions on paper required manual stock checks and manual data entry to update remaining inventory.',
       solution:
-        'Built a web application with two main workflows: an employee requisition screen with stock reservation and electronic signature capture, and an HR staff screen for PO-linked stock-in and barcode-verified dispatch.',
+        'Built a web application with two main workflows: an employee requisition screen with stock reservation and electronic signature capture, and an HR staff screen for PO-linked stock-in, barcode-verified dispatch, and real-time Stock On Hand monitoring.',
       keyFeatures: [
+        'Real-time Stock On Hand dashboard displaying actual stock, reserved quantities, available balance, and minimum stock alerts',
         'Reserves requested item quantities when a requisition is submitted to prevent overlapping requests',
         'Electronic signature pad supporting both mobile touchscreens and desktop mice',
-        'PO-linked Stock-In scanning and Requisition Queue barcode dispatch',
-        'Generates a printable A4 requisition slip after dispatch'
+        'PO-linked Stock-In scanning, Requisition Queue barcode dispatch, and printable A4 requisition slips'
       ],
       techStack: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Barcode Scanner', 'E-Signature'],
-      privacyNote: 'Internal warehouse stock tables and employee logs are omitted to protect company data privacy.'
+      privacyNote: 'All internal warehouse stock records, item codes, and employee names are strictly censored to protect company data privacy.'
     },
     {
       id: 'ocr-scanner',
-      title: 'HACO Smart Scanner V30 — Enterprise Business Card AI Web App',
+      title: 'HACO Smart Scanner — Enterprise Business Card AI Web App',
       subtitle: 'Mobile & desktop web application built on Google Apps Script and Gemini / Gemma Multi-Model AI for single & bulk business card extraction into Google Sheets and Drive',
       badge: 'Web App • Apps Script + Gemini AI',
       category: 'webapp',
@@ -136,19 +168,19 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         },
         {
           src: 'assets/haco-scanner-single.png',
-          caption: 'Single AI Scan & Camera UI: Live viewfinder with Gemini 2.5 Flash / Gemma 3 OCR parser'
+          caption: 'Single AI Scan & Extracted Result View: Full capture form with Gemini 2.5 Flash / Gemma 3 OCR parser and structured output fields'
         },
         {
           src: 'assets/haco-scanner-bulk.png',
-          caption: 'Bulk Batch Card Upload Queue: Multi-card processing pipeline with automated Google Sheets sync'
+          caption: 'Bulk Batch Card Upload Queue: Multi-card processing pipeline (up to 15 cards/batch) with automated Google Sheets sync'
         },
         {
           src: 'assets/haco-scanner-dashboard.png',
-          caption: 'Analytics Dashboard: Department scan frequency charts, user ranks, and scan volume metrics'
+          caption: 'Analytics Dashboard: 7-day scan frequency charts, active user rankings, and total scan volume metrics'
         },
         {
           src: 'assets/haco-scanner-history.png',
-          caption: 'Search & Historical Card Records: Searchable table of archived contacts with thumbnail previews'
+          caption: 'Search & Historical Card Records: Searchable table of archived contacts with privacy-masked records'
         }
       ],
       shortDesc:
@@ -168,10 +200,10 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'Single & Bulk Batch Scanner: Supports live mobile camera capture and bulk batch uploads with asynchronous queue tracking',
         'Bilingual Extraction: Accurately parses Thai and English names, corporate entities, phone numbers, emails, addresses, and websites into clean JSON',
         'Google Workspace Ecosystem: Persists structured records into Google Sheets and backs up original card images into Google Drive with timestamped URLs',
-        'Analytics Dashboard & Inline Editor: Includes Chart.js analytics for department scans, search history, and modal inline record editing',
-        'Unit Test Suite: Built-in 7-suite automated unit tests covering authentication, database CRUD, and fallback routines'
+        'Analytics Dashboard & Inline Editor: Includes Chart.js analytics for department scans, search history, and modal inline record editing'
       ],
-      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript']
+      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript'],
+      privacyNote: 'All scanned business card contact details are blurred to protect client and partner privacy.'
     },
     {
       id: 'ceo-powerbi',
@@ -217,15 +249,15 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'Prepared training materials and conducted 3 internal training sessions on Microsoft Copilot and prompt engineering',
       badge: 'AI Enablement • Internal Training',
       category: 'ai-it',
-      coverImage: 'assets/copilot-speaker.jpg',
+      coverImage: 'assets/copilot-group.jpg',
       gallery: [
+        {
+          src: 'assets/copilot-group.jpg',
+          caption: 'Group photo with participants from multiple departments during the internal AI for Modern Workplace with Microsoft Copilot training'
+        },
         {
           src: 'assets/copilot-speaker.jpg',
           caption: 'Presenting practical Microsoft Copilot workflows during an internal training session'
-        },
-        {
-          src: 'assets/copilot-group.jpg',
-          caption: 'Group photo with participants from multiple departments during the internal Copilot training'
         },
         {
           src: 'assets/copilot-classroom.jpg',
@@ -260,69 +292,101 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
   th: [
     {
       id: 'sop-generator',
-      title: 'เว็บสร้าง แก้ไข (Revision) และอนุมัติเอกสาร SOP',
-      subtitle: 'เว็บแอปสำหรับสร้างเอกสาร SOP ตามแม่แบบ แก้ไขงานเมื่อถูกตีกลับ (Edit SOP) และส่งอนุมัติออนไลน์',
-      badge: 'Web App • Document Workflow',
+      title: 'เว็บสร้าง แก้ไข (Revision) และอนุมัติเอกสาร SOP ออนไลน์ (ขับเคลื่อนด้วย Gemini & Gemma AI)',
+      subtitle: 'เว็บแอปพลิเคชันผสาน Google Gemini Flash & Gemma Multi-Model AI สำหรับร่างเนื้อหา ตรวจสอบความถูกต้อง แก้ไขงานตีกลับ และอนุมัติเอกสาร SOP',
+      badge: 'Web App • Gemini & Gemma AI',
       category: 'webapp',
       coverImage: 'assets/sop-live-create.png',
       gallery: [
         {
           src: 'assets/sop-live-create.png',
-          caption: 'หน้าสร้างเอกสาร SOP (Create SOP): หน้ากรอกข้อมูล 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ'
+          caption: 'ขั้นตอนที่ 1 — ข้อมูลเอกสาร: ฟอร์มกรอกข้อมูลควบคุมเอกสารพร้อมบันทึกฉบับร่างอัตโนมัติ'
+        },
+        {
+          src: 'assets/sop-step2-responsibility.png',
+          caption: 'ขั้นตอนที่ 2 — ผู้รับผิดชอบเอกสาร 3 ฝ่าย: กำหนดผู้จัดทำ (Issuer Lock), ผู้ตรวจสอบ และผู้อนุมัติ'
+        },
+        {
+          src: 'assets/sop-step3-content.png',
+          caption: 'ขั้นตอนที่ 3 — เนื้อหา SOP: กรอกวัตถุประสงค์ เครื่องมือ/อุปกรณ์ และผู้ปฏิบัติงานตามมาตรฐาน ISO'
+        },
+        {
+          src: 'assets/sop-step4-procedure.png',
+          caption: 'ขั้นตอนที่ 4 — วิธีการปฏิบัติงาน (AI Copilot): เขียนขั้นตอนการทำงานพร้อมระบบ AI ช่วยจัดระเบียบเนื้อหา'
+        },
+        {
+          src: 'assets/sop-step5-export.png',
+          caption: 'ขั้นตอนที่ 5 — เอกสารและรูปภาพประกอบ: ตรวจสอบความครบถ้วน 100% ก่อนดาวน์โหลดหรือส่งอนุมัติ'
+        },
+        {
+          src: 'assets/sop-live-pdf-preview.png',
+          caption: 'พรีวิว PDF แบบ Real-time: แสดงตัวอย่างเอกสารจริงจาก Template มาตรฐานทันทีบนหน้าเว็บ'
+        },
+        {
+          src: 'assets/sop-live-queue.png',
+          caption: 'หน้าคิวพิจารณาอนุมัติเอกสาร SOP: ติดตามสถานะรอผู้ตรวจ รอผู้อนุมัติ และรายการที่ถูกส่งกลับแก้ไข'
+        },
+        {
+          src: 'assets/sop-live-pin-comment.png',
+          caption: 'หน้าตรวจทานและปักหมุดใส่ Comment บน PDF: ผู้ตรวจคลิกปักหมุดชี้จุดที่ต้องแก้บนหน้าเอกสารได้โดยตรง (เบลอชื่อบุคคลแล้ว)'
+        },
+        {
+          src: 'assets/sop-live-returned-view.png',
+          caption: 'หน้าแสดงจุดที่ถูกตีกลับแก้ไข (Pin Feedback): แสดงตำแหน่งหมุดและเหตุผลที่ผู้ตรวจชี้แนะพร้อมปุ่มส่งไฟล์แก้ไขใหม่ (เบลอชื่อบุคคลแล้ว)'
         },
         {
           src: 'assets/sop-live-edit.png',
-          caption: 'หน้าแก้ไขเอกสาร SOP เมื่อถูกตีกลับ (Revision): แสดงข้อเสนอแนะจากผู้ตรวจ จุดที่ต้องแก้ไข และปุ่มส่งกลับผู้ลงนามเดิม'
+          caption: 'หน้าแก้ไขเอกสาร SOP (Edit / Revision SOP): แก้ไขเนื้อหาตามจุดที่ผู้ตรวจคอมเมนต์และกดส่งอนุมัติซ้ำบนเว็บ'
         },
         {
           src: 'assets/sop-web-library-censored.png',
-          caption: 'หน้าคลังเอกสาร SOP (Document Library): คลังจัดเก็บเอกสารแยกตามแผนกสำหรับพนักงาน (เซ็นเซอร์เฉพาะชื่อแผนกเพื่อความปลอดภัย)'
+          caption: 'หน้าคลังเอกสาร SOP (Document Library): จัดเก็บเอกสารแยกโฟลเดอร์ตามแผนก (เซ็นเซอร์ชื่อแผนกแล้ว)'
         }
       ],
       shortDesc:
-        'พัฒนาเว็บแอปด้วย Next.js และ FastAPI เพื่อจัดทำมาตรฐานการสร้างเอกสาร SOP บนเว็บ รองรับการแก้ไขเอกสารเมื่อถูกตีกลับ (Edit SOP) และระบบส่งอนุมัติตามลำดับขั้น',
-      impactSummary: 'สร้างและแก้ไขเอกสาร SOP บนเว็บ • ส่งอนุมัติตามลำดับขั้น • ทดสอบ Load Test ด้วย JMeter (100 Users)',
+        'พัฒนาเว็บแอปพลิเคชันภายในองค์กร (Next.js, React, TypeScript, FastAPI) ผสานโมเดล Google Gemini AI (Gemini 3.5 / 2.5 Flash) และ Gemma Multi-Model AI (Gemma 4 31B-IT) เพื่อช่วยร่างเนื้อหาขั้นตอนปฏิบัติงาน ตรวจสอบความสมบูรณ์และลายเซ็นทั้ง 3 ช่องอัตโนมัติ รองรับการปักหมุดแก้ไขเอกสารที่ถูกตีกลับ (Revision) และอนุมัติออนไลน์ครบวงจร',
+      impactSummary: 'ใช้ Gemini & Gemma AI ช่วยร่างและตรวจเอกสาร • ฟอร์มสร้างและแก้ไข SOP 5 ขั้นตอน • ทดสอบ JMeter (100 Users)',
       metrics: [
-        { label: 'ฟังก์ชันหลัก', value: 'สร้าง & แก้ไข SOP' },
-        { label: 'สายอนุมัติ', value: '3 ลำดับขั้น' },
-        { label: 'Load Test', value: '100 Users (JMeter)' }
+        { label: 'โมเดล AI', value: 'Gemini + Gemma AI' },
+        { label: 'ระบบงาน', value: 'สร้าง, ตรวจ & แก้ไข SOP' },
+        { label: 'ทดสอบระบบ', value: '100 Users (JMeter)' }
       ],
       situation:
-        'เดิมการจัดทำและแก้ไขเอกสาร SOP ต้องจัดหน้าเอกสารเองและส่งตรวจทานหลายรอบ เมื่อมีการขอให้แก้ไขจึงติดตามจุดที่ต้องแก้ได้ยาก',
+        'เดิมการจัดทำและแก้ไขเอกสาร SOP ต้องจัดหน้าในไฟล์แยกกันเอง ตรวจสอบคำผิด/ลายเซ็นด้วยตาเปล่า และเดินเอกสารเพื่อเซ็นอนุมัติ',
       solution:
-        'พัฒนาเว็บแอปที่แบ่งการกรอกข้อมูลเป็น 5 ขั้นตอน ดูตัวอย่าง PDF ได้ทันที ส่งเข้าคิวผู้ตรวจสอบและผู้อนุมัติบนเว็บ และมีหน้าแก้ไขเอกสาร (Edit SOP) ที่แสดงข้อเสนอแนะจากผู้ตรวจอย่างชัดเจน',
+        'พัฒนาเว็บพอร์ทัลที่เชื่อมต่อ Google Gemini Flash (พร้อมระบบสลับโมเดลอัตโนมัติไปยัง Gemma 4 31B-IT) เพื่อช่วยร่างเนื้อหาและตรวจสอบความครบถ้วนก่อนส่งอนุมัติ มีฟอร์มกรอก 5 ขั้นตอน พรีวิว PDF เรียลไทม์ ระบบปักหมุดคอมเมนต์บนเอกสาร หน้าแก้ไขงานตีกลับ และคลังเอกสารแยกตามแผนก',
       keyFeatures: [
-        'หน้าสร้างเอกสาร SOP 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และกดส่งขออนุมัติจากหน้าเว็บได้ทันที',
-        'หน้าแก้ไขเอกสาร SOP (Revision) แสดงเหตุผลและจุดที่ผู้ตรวจแจ้งให้แก้ไข พร้อมปุ่มส่งกลับให้ผู้ลงนามเดิม',
-        'ระบบคิวพิจารณาอนุมัติ แยกสถานะ รอผู้ตรวจ รอผู้อนุมัติ และส่งกลับแก้ไข พร้อมระบบลายเซ็นดิจิทัล',
-        'ทดสอบการรองรับผู้ใช้งานด้วย Apache JMeter ที่ 100 Concurrent Users (1,100 Requests)'
+        'ระบบ AI Copilot & Pre-Submission Audit: ใช้ Google Gemini Flash (3.5 / 2.5 Flash) และ Gemma 4 31B-IT ช่วยร่างเนื้อหา SOP ตรวจคำผิด และตรวจสอบลายเซ็นทั้ง 3 ช่อง',
+        'ฟอร์มสร้างเอกสาร SOP 5 ขั้นตอน พร้อมคำนวณความครบถ้วน 100% และเปิดดูพรีวิว PDF แบบเรียลไทม์',
+        'ระบบปักหมุดชี้จุดแก้ไขบน PDF (Pin Annotation) และหน้าแก้ไขเอกสาร (Edit / Revision SOP) เมื่อถูกตีกลับ',
+        'คลังเอกสารแยกตามแผนก พร้อมผลทดสอบความเสถียรด้วย Apache JMeter ที่ผู้ใช้งานพร้อมกัน 100 คน (1,100 requests, Error 0%)'
       ],
-      techStack: ['Next.js', 'React', 'TypeScript', 'FastAPI (Python)', 'Prisma', 'PDF-Lib', 'Apache JMeter'],
-      privacyNote: 'ข้อมูลเนื้อหาเอกสาร รายละเอียดขั้นตอน และข้อมูลคลังเอกสารภายในทั้งหมด ได้รับการเซ็นเซอร์ 100% เพื่อปกป้องข้อมูลความลับขององค์กร'
+      techStack: ['Next.js', 'React', 'TypeScript', 'FastAPI (Python)', 'Gemini Flash AI', 'Gemma Multi-Model AI', 'Prisma', 'PDF-Lib', 'Apache JMeter'],
+      privacyNote: 'เซ็นเซอร์ข้อมูลเนื้อหาเอกสาร ชื่อบุคคล และชื่อแผนกทั้งหมดเพื่อรักษาความลับของข้อมูลภายในบริษัท'
     },
     {
       id: 'hr-stock',
-      title: 'ระบบเว็บเบิกพัสดุและจัดการสต็อก Haco P&C (HR)',
-      subtitle: 'เว็บแอปสำหรับขอเบิกพัสดุออนไลน์ ลงลายมือชื่อบนหน้าจอ และใช้ปืนยิงบาร์โค้ดรับเข้า/จ่ายออก',
+      title: 'เว็บแอปเบิกพัสดุและตัดสต็อกด้วยบาร์โค้ด (Haco P&C Stock)',
+      subtitle: 'ระบบภายในสำหรับขอเบิกพัสดุสำนักงาน เซ็นชื่ออิเล็กทรอนิกส์ และสแกนบาร์โค้ดรับเข้า-จ่ายออก',
       badge: 'Web App • Barcode & Stock',
       category: 'webapp',
-      coverImage: 'assets/hr-live-inbound.png',
+      coverImage: 'assets/hr-web-stock-on-hand.png',
       gallery: [
         {
-          src: 'assets/hr-live-inbound.png',
-          caption: 'หน้ากรอกรับของเข้าสต็อก (Stock-In): กรอกผูกเลขที่เอกสาร PO ก่อนเริ่มยิงบาร์โค้ดรับพัสดุเข้าคลัง'
+          src: 'assets/hr-web-stock-on-hand.png',
+          caption: 'แดชบอร์ดจัดการสต็อก (Stock On Hand): แสดงรายการสต็อกคงเหลือจริง ยอดจองรอจ่าย และเกณฑ์ขั้นต่ำ (เบลอข้อมูลสินค้าแล้ว)'
         },
         {
           src: 'assets/hr-live-signature.png',
-          caption: 'หน้าผู้ร้องขอและลงลายมือชื่อ: ตรวจสอบรายการพัสดุที่ขอเบิกและเซ็นชื่ออิเล็กทรอนิกส์ยืนยันบนหน้าจอ'
+          caption: 'หน้าสรุปรายการและลงลายมือชื่อ: ตรวจสอบรายการพัสดุที่ขอเบิกและเซ็นชื่ออิเล็กทรอนิกส์บนหน้าจอ (เบลอรายการสินค้าแล้ว)'
+        },
+        {
+          src: 'assets/hr-live-inbound.png',
+          caption: 'หน้ารายการคำขอที่อนุมัติและจ่ายแล้ว (Requisition Queue): ประวัติรายการเบิกจ่ายและสถานะ Auto-Approve (เบลอชื่อและรหัสพนักงานทั้งหมด)'
         },
         {
           src: 'assets/hr-live-queue.png',
-          caption: 'หน้าผู้อนุมัติและตัดจ่ายพัสดุ: เจ้าหน้าที่ HR ตรวจสอบคิวคำขอและใช้ปืนยิงบาร์โค้ดสแกนจ่ายของ'
-        },
-        {
-          src: 'assets/hr-web-stock-on-hand.png',
-          caption: 'แดชบอร์ดจัดการสต็อก (Stock On Hand Dashboard): หน้าแสดงรายการสต็อกคงเหลือจริง ยอดที่ถูกจอง (Reservation Lock) และแจ้งเตือนสต็อกขั้นต่ำ'
+          caption: 'หน้าคิวรอดำเนินการสแกนจ่ายพัสดุ: หน้าสำหรับเจ้าหน้าที่ HR ใช้ปืนยิงบาร์โค้ดสแกนจ่ายของออก'
         }
       ],
       shortDesc:
@@ -336,19 +400,19 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       situation:
         'การเขียนใบเบิกกระดาษทำให้ตรวจสอบจำนวนพัสดุคงเหลือได้ช้า และเจ้าหน้าที่ต้องคอยบันทึกตัดสต็อกด้วยมือ',
       solution:
-        'พัฒนาเว็บแอปสำหรับพนักงานกดขอเบิกและเซ็นชื่อบนหน้าจอ (พร้อมระบบจองยอดทันที) และหน้าสำหรับเจ้าหน้าที่ HR ผูกเลข PO รับของเข้าและสแกนบาร์โค้ดจ่ายพัสดุ',
+        'พัฒนาเว็บแอปสำหรับพนักงานกดขอเบิกและเซ็นชื่อบนหน้าจอ (พร้อมระบบจองยอดทันที) และหน้าสำหรับเจ้าหน้าที่ HR ผูกเลข PO รับของเข้า สแกนบาร์โค้ดจ่ายพัสดุ และดูแดชบอร์ด Stock On Hand แบบเรียลไทม์',
       keyFeatures: [
+        'แดชบอร์ด Stock On Hand แสดงยอดคงเหลือจริง ยอดจองรอจ่าย ยอดพร้อมเบิก และเกณฑ์สต็อกขั้นต่ำ',
         'ระบบจองยอดพัสดุเมื่อพนักงานกดส่งคำขอเบิก เพื่อลดปัญหาการขอเบิกซ้ำซ้อน',
         'รองรับการเซ็นชื่ออิเล็กทรอนิกส์ทั้งบนหน้าจอมือถือและคอมพิวเตอร์',
-        'หน้ารับพัสดุเข้าคลังโดยผูกเลข PO และหน้าคิวสแกนบาร์โค้ดสำหรับตัดจ่ายพัสดุ',
-        'สร้างแบบฟอร์มใบเบิกขนาด A4 สำหรับพิมพ์หรือจัดเก็บหลังจ่ายของเสร็จ'
+        'หน้ารับพัสดุเข้าคลังโดยผูกเลข PO และหน้าคิวสแกนบาร์โค้ดสำหรับตัดจ่ายพัสดุพร้อมพิมพ์ใบเบิก A4'
       ],
       techStack: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Barcode Scanner', 'E-Signature'],
-      privacyNote: 'ไม่แสดงตารางข้อมูลพัสดุในคลังและประวัติผู้ใช้งานจริง เพื่อรักษาความลับของข้อมูลภายในบริษัท'
+      privacyNote: 'เซ็นเซอร์ข้อมูลพัสดุในคลัง รหัสสินค้า และรายชื่อพนักงานทั้งหมดเพื่อรักษาความลับของข้อมูลภายในบริษัท'
     },
     {
       id: 'ocr-scanner',
-      title: 'HACO Smart Scanner V30 — เว็บแอปสแกนนามบัตร AI ระดับองค์กร (Google Apps Script)',
+      title: 'HACO Smart Scanner — เว็บแอปสแกนนามบัตร AI ระดับองค์กร (Google Apps Script)',
       subtitle: 'เว็บแอปบนมือถือและคอมพิวเตอร์ พัฒนาด้วย Google Apps Script ผสาน Gemini 2.5 Flash / Gemma 3 Multi-Model AI สกัดข้อมูลนามบัตรบันทึกเข้า Google Sheets และ Drive',
       badge: 'Web App • Apps Script + Gemini AI',
       category: 'webapp',
@@ -365,19 +429,19 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         },
         {
           src: 'assets/haco-scanner-single.png',
-          caption: 'หน้าสแกนกล้อง AI (Single Scan): หน้าจอกล้องถ่ายภาพนามบัตรแบบเรียลไทม์ พร้อมตัวประมวลผล Gemini 2.5 Flash / Gemma 3'
+          caption: 'หน้าสแกนเดี่ยวและผลลัพธ์ AI แบบเต็มจอ: ฟอร์มถ่ายภาพนามบัตรพร้อมตัวประมวลผล Gemini 2.5 Flash / Gemma 3 และฟอร์มข้อมูลที่สกัดได้'
         },
         {
           src: 'assets/haco-scanner-bulk.png',
-          caption: 'ระบบสแกนนามบัตรเป็นชุด (Bulk Batch Queue): หน้าอัปโหลดนามบัตรหลายใบพร้อมกันและประมวลผลเข้า Google Sheets'
+          caption: 'ระบบสแกนนามบัตรเป็นชุด (Bulk Batch Queue): อัปโหลดนามบัตรสูงสุด 15 ใบต่อครั้งพร้อมคิวประมวลผล AI อัตโนมัติ'
         },
         {
           src: 'assets/haco-scanner-dashboard.png',
-          caption: 'แดชบอร์ดสถิติการใช้งาน (Analytics Dashboard): กราฟแสดงจำนวนการสแกนรายวันและจัดอันดับพนักงานผู้ใช้งานสูงสุด'
+          caption: 'แดชบอร์ดสถิติการใช้งาน (Analytics Dashboard): กราฟแสดงจำนวนการสแกน 7 วันล่าสุดและจัดอันดับผู้ใช้งานสูงสุด'
         },
         {
           src: 'assets/haco-scanner-history.png',
-          caption: 'ประวัติและระบบค้นหานามบัตรย้อนหลัง: ตารางค้นหาข้อมูลผู้ติดต่อที่สแกนแล้ว พร้อมภาพพรีวิวนามบัตร'
+          caption: 'ประวัติและระบบค้นหานามบัตรย้อนหลัง: ตารางค้นหาข้อมูลผู้ติดต่อที่สแกนแล้ว (เบลอข้อมูลส่วนบุคคล)'
         }
       ],
       shortDesc:
@@ -397,10 +461,10 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'รองรับการสแกนแบบเดี่ยวและเป็นชุด (Single & Bulk): รองรับการเปิดกล้องมือถือถ่ายทันที และการอัปโหลดไฟล์เป็นชุดพร้อมคิวประมวลผล',
         'สกัดข้อมูลสองภาษา (Bilingual OCR): สกัดชื่อ, บริษัท, ตำแหน่ง, เบอร์โทร, อีเมล, ที่อยู่ และเว็บไซต์ทั้งไทย-อังกฤษ เป็นโครงสร้าง JSON สะอาด',
         'ผสานระบบ Google Workspace: บันทึกข้อมูลลง Google Sheets และอัปโหลดไฟล์ภาพต้นฉบับเข้า Google Drive พร้อมสร้าง URL พรีวิวเฉพาะ',
-        'แดชบอร์ดสถิติและระบบแก้ไข: หน้า Dashboard สรุปข้อมูลด้วย Chart.js พร้อมระบบค้นหาย้อนหลังและหน้าต่างแก้ไขข้อมูล (Inline Edit)',
-        'ชุดทดสอบระบบอัตโนมัติ (Unit Tests): เขียนฟังก์ชันทดสอบ 7 ระบบหลัก (Auth, CRUD, Dashboard, Sheet) มั่นใจก่อนปล่อยใช้งานจริง'
+        'แดชบอร์ดสถิติและระบบแก้ไข: หน้า Dashboard สรุปข้อมูลด้วย Chart.js พร้อมระบบค้นหาย้อนหลังและหน้าต่างแก้ไขข้อมูล'
       ],
-      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript']
+      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript'],
+      privacyNote: 'เบลอข้อมูลชื่อ เบอร์โทรศัพท์ และอีเมลบนนามบัตรทั้งหมดเพื่อปกป้องข้อมูลส่วนบุคคล'
     },
     {
       id: 'ceo-powerbi',
@@ -420,68 +484,68 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         }
       ],
       shortDesc:
-        'ทำระบบเตรียมข้อมูลยอดขายจาก SAP อัตโนมัติ และสร้างแดชบอร์ด Power BI สำหรับรายงานธุรกิจ ครอบคลุมหน้าเปรียบเทียบยอดขายข้ามปี (2025 vs 2026), แผนก Smart Life, แผนก Project และ Inventory',
-      impactSummary: 'เตรียมข้อมูลจาก SAP อัตโนมัติ • รายงานยอดขาย (YoY, Smart Life, Project) และ Inventory • กรองดูข้อมูลย่อยได้ทันที',
+        'เตรียมข้อมูลการขายจากระบบ SAP แบบอัตโนมัติ และสร้างแดชบอร์ด Power BI สำหรับรายงานผลธุรกิจ ครอบคลุมยอดขายข้ามปี (2025 vs 2026), แผนก Smart Life, แผนก Project และข้อมูลคลังสินค้า (Inventory)',
+      impactSummary: 'เตรียมข้อมูลจาก SAP อัตโนมัติ • แดชบอร์ดยอดขาย (YoY, Smart Life, Project) และคลังสินค้า • กดกรองข้อมูลได้',
       metrics: [
         { label: 'แหล่งข้อมูล', value: 'SAP' },
         { label: 'เครื่องมือ', value: 'Power BI & DAX' },
         { label: 'การเตรียมข้อมูล', value: 'Automated' }
       ],
       situation:
-        'การทำรายงานสรุปยอดขายและคลังสินค้าในแต่ละรอบต้องดึงข้อมูลจาก SAP มาจัดตารางด้วยมือ ทำให้ใช้เวลาในการเตรียมรายงาน',
+        'การทำรายงานยอดขายและคลังสินค้าในแต่ละรอบ ต้องดึงข้อมูลดิบจาก SAP มาจัดตารางและผูกสูตรใหม่ด้วยมือ',
       solution:
-        'จัดทำขั้นตอนเตรียมข้อมูลจาก SAP อัตโนมัติ และผูกความสัมพันธ์ข้อมูลใน Power BI พร้อมเขียนสูตร DAX เพื่อให้เลือกดูข้อมูลตามปี เดือน และทีมขายได้สะดวก',
+        'ทำระบบเตรียมข้อมูลจาก SAP อัตโนมัติ และผูก Data Model กับสูตร DAX ใน Power BI เพื่อให้กดดูแนวโน้มยอดขายและสต็อกสินค้าผ่านแดชบอร์ดได้ทันที',
       keyFeatures: [
-        'ระบบเตรียมข้อมูลยอดขายและคลังสินค้าจาก SAP อัตโนมัติ',
-        'หน้าเปรียบเทียบยอดขายปี 2025 เทียบ 2026 แยกตามเดือน ไตรมาส และหมวดหมู่สินค้า',
-        'หน้าติดตามยอดขายเทียบเป้าหมายและใบเสนอราคา (SQ/PO) ของทีม Smart Life และ Project',
-        'หน้ารายงานข้อมูลคลังสินค้า (Inventory)'
+        'เตรียมข้อมูลการขายและคลังสินค้าอัตโนมัติจากข้อมูล SAP',
+        'แดชบอร์ดเปรียบเทียบยอดขายข้ามปี (2025 vs 2026) รายเดือน รายไตรมาส และรายหมวดสินค้า',
+        'แดชบอร์ดติดตามยอดขายเทียบเป้าหมายและสถานะใบเสนอราคา (SQ/PO) สำหรับทีม Smart Life และ Project',
+        'แดชบอร์ดติดตามข้อมูลคลังสินค้า (Inventory)'
       ],
       techStack: ['Power BI', 'SAP Data Preparation', 'DAX', 'Power Query', 'Data Modeling'],
-      privacyNote: 'เบลอตัวเลขยอดขาย ชื่อลูกค้า และรหัสสินค้าทั้งหมดเพื่อรักษาความลับของบริษัทอย่างเคร่งครัด'
+      privacyNote: 'เบลอตัวเลขยอดขาย ชื่อลูกค้า และรหัสสินค้าทั้งหมดเพื่อรักษาความลับทางธุรกิจของบริษัท'
     },
     {
       id: 'copilot-training',
-      title: 'การจัดอบรม Microsoft Copilot & Prompt Engineering ภายในองค์กร',
-      subtitle: 'จัดทำเอกสารการสอนและจัดการอบรมภายใน 3 รอบ เกี่ยวกับการใช้งาน Microsoft Copilot และการเขียน Prompt',
+      title: 'จัดอบรมภายในองค์กร — การใช้งาน Microsoft Copilot & Prompt Engineering',
+      subtitle: 'จัดทำเอกสารประกอบการสอนและเป็นวิทยากรอบรมพนักงานภายในบริษัทจำนวน 3 รอบ',
       badge: 'AI Enablement • Internal Training',
       category: 'ai-it',
-      coverImage: 'assets/copilot-speaker.jpg',
+      coverImage: 'assets/copilot-group.jpg',
       gallery: [
         {
-          src: 'assets/copilot-speaker.jpg',
-          caption: 'บรรยากาศการบรรยายแนวทางใช้งาน Microsoft Copilot ในห้องอบรมของบริษัท'
+          src: 'assets/copilot-group.jpg',
+          caption: 'ภาพถ่ายรวมผู้เข้าอบรมจากหลายแผนกในหลักสูตร AI for Modern Workplace with Microsoft Copilot'
         },
         {
-          src: 'assets/copilot-group.jpg',
-          caption: 'ภาพถ่ายร่วมกับพนักงานที่เข้าร่วมการอบรมการใช้ AI ในการทำงาน'
+          src: 'assets/copilot-speaker.jpg',
+          caption: 'บรรยายแนะนำแนวทางการใช้ Microsoft Copilot ช่วยงานเอกสารและสรุปข้อมูลในห้องอบรม'
         },
         {
           src: 'assets/copilot-classroom.jpg',
-          caption: 'การฝึกปฏิบัติในห้องอบรมให้พนักงานทดลองเขียนคำสั่ง Prompt กับงานเอกสาร'
+          caption: 'บรรยากาศการฝึกปฏิบัติ (Hands-on) ให้พนักงานทดลองพิมพ์คำสั่ง Prompt กับโจทย์งานจริง'
         },
         {
           src: 'assets/copilot-coaching.jpg',
-          caption: 'ให้คำแนะนำการเขียนและปรับแก้ Prompt รายบุคคลระหว่างการฝึกอบรม'
+          caption: 'เดินแนะนำการปรับโครงสร้างคำสั่ง Prompt รายบุคคลให้ตรงกับงานของแต่ละแผนก'
         }
       ],
       shortDesc:
-        'จัดทำสื่อการสอนและดำเนินการอบรมภายในจำนวน 3 รอบ ให้กับพนักงานในบริษัท ในหัวข้อการใช้งาน Microsoft Copilot เบื้องต้น เทคนิคการเขียนคำสั่ง (Prompt Engineering) และข้อควรระวังด้านข้อมูลความลับ',
-      impactSummary: 'จัดการอบรมภายใน 3 รอบ • ฝึกเขียน Prompt จากโจทย์งานจริง • แนะนำแนวทางป้องกันข้อมูลรั่วไหล',
+        'จัดทำสื่อการสอนและเป็นวิทยากรอบรมภายในบริษัทจำนวน 3 รอบ เพื่อแนะนำการใช้งาน Microsoft Copilot การเขียนคำสั่ง Prompt และข้อควรระวังในการปกป้องข้อมูลภายในบริษัท',
+      impactSummary: 'จัดอบรมภายใน 3 รอบ • ฝึกเขียน Prompt จากโจทย์งานจริง • แนะนำแนวทางป้องกันข้อมูลรั่วไหล',
       metrics: [
-        { label: 'จำนวนรอบ', value: '3 รอบการอบรม' },
-        { label: 'รูปแบบ', value: 'บรรยายและฝึกปฏิบัติ' },
+        { label: 'การอบรม', value: '3 รอบภายในบริษัท' },
+        { label: 'รูปแบบ', value: 'บรรยาย & ฝึกปฏิบัติ' },
         { label: 'เนื้อหา', value: 'Copilot & Prompts' }
       ],
       situation:
-        'บริษัทต้องการให้พนักงานในแผนกต่างๆ เรียนรู้วิธีใช้งาน Microsoft Copilot เพื่อช่วยสรุปข้อมูลและร่างเอกสารได้อย่างถูกต้องและปลอดภัย',
+        'บริษัทต้องการให้พนักงานในแผนกต่างๆ นำ Microsoft Copilot มาช่วยลดเวลาทำงานเอกสารและสรุปข้อมูล โดยยังต้องระมัดระวังไม่ให้ข้อมูลสำคัญรั่วไหล',
       solution:
-        'เตรียมเนื้อหาการสอน ตัวอย่างโครงสร้างการเขียนคำสั่ง Prompt และจัดอบรมเชิงปฏิบัติการภายใน 3 รอบ พร้อมเดินแนะแนวทางรายบุคคล',
+        'เตรียมสไลด์เนื้อหา ตัวอย่างคำสั่ง Prompt และโจทย์ฝึกปฏิบัติ แล้วจัดอบรมให้พนักงานจำนวน 3 รอบ พร้อมเดินให้คำแนะนำรายบุคคลในห้องเรียน',
       keyFeatures: [
-        'แนะนำการใช้งาน Microsoft Copilot ร่วมกับงานเอกสารและการสรุปข้อมูล',
-        'สอนโครงสร้างการเขียนคำสั่ง (Prompt Engineering) ให้ได้ผลลัพธ์ตรงตามความต้องการ',
-        'ให้ผู้เข้าอบรมทดลองเขียน Prompt และช่วยแนะนำการปรับแก้แบบตัวต่อตัว',
-        'ชี้แจงข้อควรระวังในการไม่นำข้อมูลความลับของบริษัทไปกรอกในระบบ AI สาธารณะ'
+        'แนะนำการใช้ Microsoft Copilot ร่วมกับ Word, Excel และงานสื่อสารประจำวัน',
+        'โครงสร้างการเขียนคำสั่ง Prompt เพื่อให้ AI สรุปข้อมูลและร่างเอกสารได้ตรงตามต้องการ',
+        'ช่วงฝึกปฏิบัติในห้องอบรมพร้อมเดินตอบคำถามและช่วยปรับ Prompt รายบุคคล',
+        'แนวทางคัดกรองข้อมูลความลับของบริษัทก่อนนำไปใช้กับเครื่องมือ AI'
       ],
       techStack: ['Microsoft Copilot', 'Copilot Studio', 'Prompt Engineering', 'Internal Training']
     }

@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  FileText,
-  Globe
-} from 'lucide-react';
+import { Globe } from 'lucide-react';
 import ProjectsShowcase from './components/ProjectsShowcase';
 import CaseStudyModal from './components/CaseStudyModal';
 import { ProjectCaseStudy, Language, PROJECTS_BY_LANG } from './data/portfolioData';
@@ -31,14 +28,14 @@ export default function App() {
       <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-sky-100 shadow-xs">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <span className="px-2.5 py-1 rounded-lg text-xs font-black bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-sm">
+            <span className="px-2.5 py-1 rounded-lg text-xs font-black bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-sm shrink-0">
               FORD • DX
             </span>
-            <div className="hidden sm:block">
-              <span className="font-bold text-slate-800 text-sm">
+            <div>
+              <span className="font-bold text-slate-800 text-xs sm:text-sm block leading-tight">
                 Thamawut Dejaroenviroon
               </span>
-              <span className="text-xs text-sky-600 font-medium block">
+              <span className="text-[11px] sm:text-xs text-sky-600 font-medium block leading-tight">
                 Data Analyst & Technology
               </span>
             </div>
@@ -70,16 +67,6 @@ export default function App() {
                 TH
               </button>
             </div>
-
-            <a
-              href="Resume-Thamawut-Dejaroenviroon.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 shadow-md shadow-sky-500/20 transition-all"
-            >
-              <FileText className="w-3.5 h-3.5" />
-              <span>{lang === 'en' ? 'Resume (PDF)' : 'เปิดดู Resume'}</span>
-            </a>
           </div>
         </div>
       </header>
@@ -96,15 +83,6 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>© 2026 Thamawut Dejaroenviroon (Ford) • Data Analyst & Technology</p>
           <div className="flex items-center gap-3">
-            <a
-              href="Resume-Thamawut-Dejaroenviroon.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              Resume (PDF)
-            </a>
-            <span>•</span>
             <a
               href="https://github.com/Fordhandsome/Achievement"
               target="_blank"
