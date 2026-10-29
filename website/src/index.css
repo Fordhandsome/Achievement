@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Prompt', sans-serif;
+  }
+}
+
+@layer components {
+  .white-card {
+    @apply bg-white/95 backdrop-blur-xl border border-sky-100 rounded-2xl shadow-[0_12px_36px_-10px_rgba(2,132,199,0.10)] transition-all duration-300;
+  }
+
+  .white-card-hover {
+    @apply hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_20px_48px_-12px_rgba(2,132,199,0.18)];
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#2563EB] bg-clip-text text-transparent;
+  }
+
+  .btn-blue {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-sky-500 via-blue-600 to-blue-700 shadow-md shadow-blue-500/25 hover:from-sky-600 hover:to-blue-800 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
+  }
+
+  .btn-outline-blue {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-blue-700 bg-sky-50 border border-sky-200 hover:bg-sky-100 hover:border-sky-300 hover:-translate-y-0.5 transition-all duration-200;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
