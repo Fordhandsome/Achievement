@@ -4,7 +4,6 @@ import {
   Globe
 } from 'lucide-react';
 import ProjectsShowcase from './components/ProjectsShowcase';
-import ActivityGallery from './components/ActivityGallery';
 import CaseStudyModal from './components/CaseStudyModal';
 import { ProjectCaseStudy, Language, PROJECTS_BY_LANG } from './data/portfolioData';
 
@@ -90,7 +89,6 @@ export default function App() {
           lang={lang}
           onSelectProject={(proj) => setSelectedProjectId(proj.id)}
         />
-        <ActivityGallery lang={lang} />
       </main>
 
       {/* Footer */}

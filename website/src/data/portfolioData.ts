@@ -46,16 +46,8 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
           caption: 'Edit / Revision SOP Screen: Document revision workflow displaying reviewer comments, change points, and re-submission to approver'
         },
         {
-          src: 'assets/sop-web-audit-censored.png',
-          caption: 'Audit & Approval Queue Screen (Censored): 3-tier reviewer checklist and digital approval queue (confidential document data masked)'
-        },
-        {
           src: 'assets/sop-web-library-censored.png',
-          caption: 'Document Library Archive Screen (Censored): Departmental folder library for company procedures (all internal document records censored for privacy)'
-        },
-        {
-          src: 'assets/sop-jmeter-100users.png',
-          caption: 'Apache JMeter Load Testing: Verified 100 concurrent users across 1,100 requests with 0% error rate'
+          caption: 'Document Library Archive Screen: Departmental folder library for company procedures (department names masked for privacy)'
         }
       ],
       shortDesc:
@@ -131,12 +123,32 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'Mobile & desktop web application built on Google Apps Script and Gemini / Gemma Multi-Model AI for single & bulk business card extraction into Google Sheets and Drive',
       badge: 'Web App • Apps Script + Gemini AI',
       category: 'webapp',
-      coverImage: 'assets/haco-card-scanner.png',
-      coverFit: 'contain',
+      coverImage: 'assets/haco-scanner-home.png',
+      coverFit: 'cover',
       gallery: [
         {
           src: 'assets/haco-card-scanner.png',
-          caption: 'Live Web UI: Employee authentication and smart card capture interface for mobile & desktop browsers'
+          caption: 'Employee Authentication Screen: Secure staff ID and 4-digit verification login portal'
+        },
+        {
+          src: 'assets/haco-scanner-home.png',
+          caption: 'Home Menu & Mode Selection: Hub for Single AI Scan, Bulk Batch Upload, and History navigation'
+        },
+        {
+          src: 'assets/haco-scanner-single.png',
+          caption: 'Single AI Scan & Camera UI: Live viewfinder with Gemini 2.5 Flash / Gemma 3 OCR parser'
+        },
+        {
+          src: 'assets/haco-scanner-bulk.png',
+          caption: 'Bulk Batch Card Upload Queue: Multi-card processing pipeline with automated Google Sheets sync'
+        },
+        {
+          src: 'assets/haco-scanner-dashboard.png',
+          caption: 'Analytics Dashboard: Department scan frequency charts, user ranks, and scan volume metrics'
+        },
+        {
+          src: 'assets/haco-scanner-history.png',
+          caption: 'Search & Historical Card Records: Searchable table of archived contacts with thumbnail previews'
         }
       ],
       shortDesc:
@@ -263,16 +275,8 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
           caption: 'หน้าแก้ไขเอกสาร SOP เมื่อถูกตีกลับ (Revision): แสดงข้อเสนอแนะจากผู้ตรวจ จุดที่ต้องแก้ไข และปุ่มส่งกลับผู้ลงนามเดิม'
         },
         {
-          src: 'assets/sop-web-audit-censored.png',
-          caption: 'หน้าตรวจอนุมัติและประทับตราดิจิทัล (เซ็นเซอร์ข้อมูล): ระบบคิวตรวจสอบความครบถ้วน ลายเซ็น 3 ระดับ และการประทับตราดิจิทัล (เซ็นเซอร์ข้อมูลเพื่อความปลอดภัย)'
-        },
-        {
           src: 'assets/sop-web-library-censored.png',
-          caption: 'หน้าคลังเอกสาร SOP (เซ็นเซอร์ข้อมูลคลังทั้งหมด): คลังจัดเก็บเอกสารแยกตามแผนกสำหรับพนักงาน (เซ็นเซอร์ข้อมูลเอกสารทั้งหมด 100% เพื่อความปลอดภัย)'
-        },
-        {
-          src: 'assets/sop-jmeter-100users.png',
-          caption: 'ผลทดสอบ Apache JMeter: ทดสอบผู้ใช้งานพร้อมกัน 100 Users ยิง 1,100 Requests ผ่าน 100% (0% Error)'
+          caption: 'หน้าคลังเอกสาร SOP (Document Library): คลังจัดเก็บเอกสารแยกตามแผนกสำหรับพนักงาน (เซ็นเซอร์เฉพาะชื่อแผนกเพื่อความปลอดภัย)'
         }
       ],
       shortDesc:
@@ -348,12 +352,32 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'เว็บแอปบนมือถือและคอมพิวเตอร์ พัฒนาด้วย Google Apps Script ผสาน Gemini 2.5 Flash / Gemma 3 Multi-Model AI สกัดข้อมูลนามบัตรบันทึกเข้า Google Sheets และ Drive',
       badge: 'Web App • Apps Script + Gemini AI',
       category: 'webapp',
-      coverImage: 'assets/haco-card-scanner.png',
-      coverFit: 'contain',
+      coverImage: 'assets/haco-scanner-home.png',
+      coverFit: 'cover',
       gallery: [
         {
           src: 'assets/haco-card-scanner.png',
-          caption: 'หน้าจอเว็บจริง: ระบบยืนยันตัวตนพนักงานและอินเทอร์เฟซสแกนนามบัตรอัจฉริยะ รองรับทั้งเบราว์เซอร์มือถือและคอมพิวเตอร์'
+          caption: 'หน้าจอเข้าสู่ระบบ (Staff Authentication): ระบบยืนยันตัวตนพนักงานด้วยรหัสประจำตัวและรหัสผ่าน 4 หลัก'
+        },
+        {
+          src: 'assets/haco-scanner-home.png',
+          caption: 'เมนูหลักและเลือกโหมดการใช้งาน: หน้าเลือกระหว่างสแกนเดี่ยว (Single Scan), สแกนชุด (Bulk) และดูประวัติ'
+        },
+        {
+          src: 'assets/haco-scanner-single.png',
+          caption: 'หน้าสแกนกล้อง AI (Single Scan): หน้าจอกล้องถ่ายภาพนามบัตรแบบเรียลไทม์ พร้อมตัวประมวลผล Gemini 2.5 Flash / Gemma 3'
+        },
+        {
+          src: 'assets/haco-scanner-bulk.png',
+          caption: 'ระบบสแกนนามบัตรเป็นชุด (Bulk Batch Queue): หน้าอัปโหลดนามบัตรหลายใบพร้อมกันและประมวลผลเข้า Google Sheets'
+        },
+        {
+          src: 'assets/haco-scanner-dashboard.png',
+          caption: 'แดชบอร์ดสถิติการใช้งาน (Analytics Dashboard): กราฟแสดงจำนวนการสแกนรายวันและจัดอันดับพนักงานผู้ใช้งานสูงสุด'
+        },
+        {
+          src: 'assets/haco-scanner-history.png',
+          caption: 'ประวัติและระบบค้นหานามบัตรย้อนหลัง: ตารางค้นหาข้อมูลผู้ติดต่อที่สแกนแล้ว พร้อมภาพพรีวิวนามบัตร'
         }
       ],
       shortDesc:
