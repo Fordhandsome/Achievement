@@ -1,6 +1,6 @@
 # Thamawut Dejaroenviroon (Ford) — Portfolio
 
-**Data Analyst & Technology | AI Solution & Process Automation Specialist**  
+**Data Analyst & Technology**  
 B.Eng. in Chemical Engineering (Second-Class Honors, GPA: 3.35) — KMUTNB  
 Vocational Certificate in Electrical & Electronics — Thai-German Pre-Engineering School, KMUTNB  
 
@@ -50,7 +50,7 @@ AI Solution & Process Automation Specialist with an engineering background. I wo
 
 ## 💼 Work Experience
 
-- **AI Solution & Automation Specialist** — *Haco Electric (Thailand) Co., Ltd.* *(Dec 2025 – Present)*
+- **Data Analyst & Technology** — *Haco Electric (Thailand) Co., Ltd.* *(Dec 2025 – Present)*
 - **Document Report (Contract)** — *QV TEST COMPANY LIMITED* *(Jul 2025 – Oct 2025)*
   - Created Excel automation with VBA and automated record keeping.
 - **QE Engineer** — *Chinpoon Electronics (Thailand) Public Company Limited* *(2024 – 2025)*

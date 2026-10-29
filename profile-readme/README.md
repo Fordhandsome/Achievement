@@ -1,6 +1,6 @@
 # Thamawut Dejaroenviroon (Ford)
 
-**Data Analyst & Technology | AI Solution & Process Automation Specialist**  
+**Data Analyst & Technology**  
 B.Eng. in Chemical Engineering (Second-Class Honors, GPA: 3.35) — KMUTNB  
 Vocational Certificate in Electrical & Electronics — Thai-German Pre-Engineering School, KMUTNB  
 

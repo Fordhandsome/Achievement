@@ -39,7 +39,7 @@ export default function App() {
                 Thamawut Dejaroenviroon
               </span>
               <span className="text-xs text-sky-600 font-medium block">
-                Data Analyst & Technology • AI Solution & Automation
+                Data Analyst & Technology
               </span>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function App() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-sky-100 bg-white/90 py-6 mt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© 2026 Thamawut Dejaroenviroon (Ford) • AI Solution & Process Automation Engineer</p>
+          <p>© 2026 Thamawut Dejaroenviroon (Ford) • Data Analyst & Technology</p>
           <div className="flex items-center gap-3">
             <a
               href="Resume-Thamawut-Dejaroenviroon.pdf"
