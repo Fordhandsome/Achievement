@@ -6,7 +6,8 @@ import {
   ChevronRight,
   ExternalLink,
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Maximize2
 } from 'lucide-react';
 import { ProjectCaseStudy, Language } from '../data/portfolioData';
 
@@ -18,9 +19,11 @@ interface Props {
 
 export default function CaseStudyModal({ lang, project, onClose }: Props) {
   const [slideIdx, setSlideIdx] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   useEffect(() => {
     setSlideIdx(0);
+    setIsZoomed(false);
   }, [project]);
 
   useEffect(() => {
@@ -88,8 +91,19 @@ export default function CaseStudyModal({ lang, project, onClose }: Props) {
                   <img
                     src={currentSlide.src}
                     alt={currentSlide.caption}
-                    className="max-h-[460px] w-full object-contain"
+                    onClick={() => setIsZoomed(true)}
+                    className="max-h-[460px] w-full object-contain cursor-zoom-in"
                   />
+
+                  <button
+                    type="button"
+                    onClick={() => setIsZoomed(true)}
+                    aria-label="View Fullscreen"
+                    title={lang === 'en' ? 'Click to view full size' : 'คลิกเพื่อดูภาพขนาดเต็ม'}
+                    className="absolute top-3 right-3 p-2 rounded-xl bg-white/90 hover:bg-white text-slate-700 hover:text-blue-600 shadow-md transition-colors"
+                  >
+                    <Maximize2 className="w-4 h-4" />
+                  </button>
 
                   {project.gallery.length > 1 && (
                     <>
@@ -222,6 +236,29 @@ export default function CaseStudyModal({ lang, project, onClose }: Props) {
             </div>
           </div>
         </motion.div>
+
+        {isZoomed && currentSlide && (
+          <div
+            onClick={() => setIsZoomed(false)}
+            className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-4 cursor-zoom-out"
+          >
+            <button
+              type="button"
+              onClick={() => setIsZoomed(false)}
+              className="absolute top-4 right-4 p-2.5 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src={currentSlide.src}
+              alt={currentSlide.caption}
+              className="max-h-[85vh] max-w-[95vw] object-contain rounded-lg shadow-2xl"
+            />
+            <p className="mt-3 text-xs sm:text-sm text-slate-200 text-center max-w-2xl bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-sm">
+              {currentSlide.caption}
+            </p>
+          </div>
+        )}
       </motion.div>
     </AnimatePresence>
   );

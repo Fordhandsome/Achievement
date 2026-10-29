@@ -241,32 +241,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'Guidelines on protecting sensitive company data when using AI tools'
       ],
       techStack: ['Microsoft Copilot', 'Copilot Studio', 'Prompt Engineering', 'Internal Training']
-    },
-    {
-      id: 'teams-meeting-room',
-      title: 'Microsoft Teams Room Setup & Automated Booking',
-      subtitle: 'Set up conference room AV equipment and implemented automated room booking in Microsoft Teams',
-      badge: 'IT Support & Automation',
-      category: 'ai-it',
-      gallery: [],
-      shortDesc:
-        'Configured the Microsoft Teams meeting room hardware (display, camera, and audio) and set up automated room booking in Microsoft Teams.',
-      impactSummary: 'Conference room AV & display setup • Automated room booking in Microsoft Teams',
-      metrics: [
-        { label: 'Platform', value: 'Microsoft Teams' },
-        { label: 'Workflow', value: 'Auto Room Booking' },
-        { label: 'Hardware', value: 'AV & Display Setup' }
-      ],
-      situation:
-        'The office needed a ready-to-use Microsoft Teams conference room setup and a convenient way for employees to book meeting rooms without scheduling conflicts.',
-      solution:
-        'Connected and tested the conference room display, camera, and audio peripherals with Microsoft Teams, and configured automated room booking within Microsoft Teams.',
-      keyFeatures: [
-        'Configured conference room display, camera, and microphone equipment for Microsoft Teams meetings',
-        'Implemented automated meeting room booking in Microsoft Teams',
-        'Tested audio/video readiness and supported staff usage'
-      ],
-      techStack: ['Microsoft Teams', 'Power Automate', 'AV Equipment Setup', 'IT Support']
     }
   ],
   th: [
@@ -482,32 +456,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         'ชี้แจงข้อควรระวังในการไม่นำข้อมูลความลับของบริษัทไปกรอกในระบบ AI สาธารณะ'
       ],
       techStack: ['Microsoft Copilot', 'Copilot Studio', 'Prompt Engineering', 'Internal Training']
-    },
-    {
-      id: 'teams-meeting-room',
-      title: 'ติดตั้งอุปกรณ์ห้องประชุมและระบบจองห้องประชุมใน Microsoft Teams',
-      subtitle: 'ตั้งค่าอุปกรณ์ภาพและเสียงของห้องประชุม และทำระบบจองห้องประชุมอัตโนมัติผ่าน Microsoft Teams',
-      badge: 'IT Support & Automation',
-      category: 'ai-it',
-      gallery: [],
-      shortDesc:
-        'ติดตั้งและตั้งค่าอุปกรณ์ห้องประชุมออนไลน์ (จอแสดงผล กล้อง และระบบเสียง) ให้พร้อมใช้งานกับ Microsoft Teams และจัดทำระบบจองห้องประชุมอัตโนมัติใน Microsoft Teams',
-      impactSummary: 'ตั้งค่าอุปกรณ์ภาพและเสียงห้องประชุม • ระบบจองห้องประชุมอัตโนมัติใน Microsoft Teams',
-      metrics: [
-        { label: 'แพลตฟอร์ม', value: 'Microsoft Teams' },
-        { label: 'ระบบจองห้อง', value: 'Auto Booking' },
-        { label: 'อุปกรณ์', value: 'AV & Display Setup' }
-      ],
-      situation:
-        'บริษัทต้องการเตรียมระบบห้องประชุมให้รองรับการประชุมผ่าน Microsoft Teams ได้สะดวก และมีระบบจองคิวห้องประชุมที่ลดปัญหาการจองชนกัน',
-      solution:
-        'ดำเนินการเชื่อมต่อจอภาพ กล้อง และไมโครโฟนเข้ากับระบบ Microsoft Teams และตั้งค่าระบบจองห้องประชุมอัตโนมัติใน Microsoft Teams',
-      keyFeatures: [
-        'ตั้งค่าการเชื่อมต่อจอแสดงผล กล้อง และไมโครโฟนสำหรับห้องประชุม Microsoft Teams',
-        'จัดทำระบบจองห้องประชุมอัตโนมัติผ่าน Microsoft Teams',
-        'ทดสอบความพร้อมของระบบภาพและเสียงเพื่อรองรับการประชุมของแผนกต่างๆ'
-      ],
-      techStack: ['Microsoft Teams', 'Power Automate', 'AV Equipment Setup', 'IT Support']
     }
   ]
 };
