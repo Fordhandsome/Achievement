@@ -46,8 +46,12 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
           caption: 'Edit / Revision SOP Screen: Returned documents show reviewer comments, annotation points, and a button to re-submit to the reviewer'
         },
         {
-          src: 'assets/sop-live-audit.png',
-          caption: 'SOP Approval & Revision Queue: Tracks documents pending review, pending approval, or returned for edits with a direct Edit SOP button'
+          src: 'assets/sop-drawio-workflow.png',
+          caption: 'Draw.io System Architecture Flowchart: 4-swimlane approval workflow (User, Reviewer, Approver, and Database / Automation routing)'
+        },
+        {
+          src: 'assets/sop-dark-drawio-workflow.png',
+          caption: 'Draw.io Process Lifecycle & Gate Review: Detailed state machine covering form generation, audit gate, revision loops, and digital stamping'
         },
         {
           src: 'assets/sop-live-signature.png',
@@ -87,6 +91,10 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       category: 'webapp',
       coverImage: 'assets/hr-live-signature.png',
       gallery: [
+        {
+          src: 'assets/hr-drawio-workflow.png',
+          caption: 'Draw.io System Flowchart: Barcode requisition workflow, inventory auto-reservation, PO-linked stock-in, and scanner dispatch'
+        },
         {
           src: 'assets/hr-live-signature.png',
           caption: 'Requisition Summary & E-Signature Screen: Employees review requested items and sign on screen before submitting'
@@ -289,8 +297,12 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
           caption: 'หน้าเว็บแก้ไขเอกสาร SOP (Edit / Revision SOP): แสดงคอมเมนต์และจุดที่ผู้ตรวจชี้แนะให้แก้ไข พร้อมปุ่มส่งกลับผู้ลงนามเดิม'
         },
         {
-          src: 'assets/sop-live-audit.png',
-          caption: 'หน้าคิวพิจารณาอนุมัติและส่งกลับแก้ไข: ติดตามสถานะเอกสาร รอผู้ตรวจ รอผู้อนุมัติ และรายการที่ถูกส่งกลับให้กดแก้ไขเอกสาร'
+          src: 'assets/sop-drawio-workflow.png',
+          caption: 'ผังสถาปัตยกรรมระบบ (Draw.io): แผนภาพ 4 สายงาน (User, Reviewer, Approver, Database) แสดงขั้นตอนการสร้าง ตรวจทาน และอนุมัติ'
+        },
+        {
+          src: 'assets/sop-dark-drawio-workflow.png',
+          caption: 'ผังวงจรชีวิตเอกสาร (Draw.io): แสดง State Machine ตั้งแต่สร้างเอกสาร ตรวจสอบความถูกต้อง การส่งกลับแก้ไข (Revision) และประทับตรา'
         },
         {
           src: 'assets/sop-live-signature.png',
@@ -330,6 +342,10 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       category: 'webapp',
       coverImage: 'assets/hr-live-signature.png',
       gallery: [
+        {
+          src: 'assets/hr-drawio-workflow.png',
+          caption: 'ผังระบบงาน (Draw.io): แผนภาพขั้นตอนการขอเบิกพัสดุ จองยอดสต็อกล่วงหน้า การรับเข้าสต็อกผูก PO และการยิงบาร์โค้ดจ่ายของ'
+        },
         {
           src: 'assets/hr-live-signature.png',
           caption: 'หน้าสรุปรายการเบิกและลงลายมือชื่ออิเล็กทรอนิกส์: ตรวจสอบรายการและเซ็นชื่อบนหน้าจอก่อนยืนยันการเบิก'

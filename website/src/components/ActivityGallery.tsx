@@ -5,7 +5,7 @@ import { Language } from '../data/portfolioData';
 
 export interface GalleryPhoto {
   id: string;
-  category: 'webapp' | 'training' | 'dashboard';
+  category: 'webapp' | 'workflow' | 'training' | 'dashboard';
   title: string;
   subtitle: string;
   src: string;
@@ -31,14 +31,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Edit SOP Web UI'
     },
     {
-      id: 'p-web-sop-audit',
-      category: 'webapp',
-      title: 'SOP Portal: Approval & Returned Revision Queue',
-      subtitle: 'Tracks SOP documents pending review, pending approval, and returned for edits with a direct Edit SOP button',
-      src: 'assets/sop-live-audit.png',
-      tag: 'Approval Queue UI'
-    },
-    {
       id: 'p-web-sop-sig',
       category: 'webapp',
       title: 'SOP Portal: Digital Signature Settings Modal',
@@ -53,6 +45,38 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'Load-tested with 100 concurrent users and 1,100 requests (0% error rate)',
       src: 'assets/sop-jmeter-100users.png',
       tag: 'JMeter Load Test'
+    },
+    {
+      id: 'p-wf-sop-master',
+      category: 'workflow',
+      title: 'SOP Portal: Master System Architecture Flowchart (Draw.io)',
+      subtitle: 'Architectural flowchart with 4 swimlanes (User, Reviewer, Approver, Database) and automated status routing',
+      src: 'assets/sop-drawio-workflow.png',
+      tag: 'Draw.io Architecture'
+    },
+    {
+      id: 'p-wf-sop-lifecycle',
+      category: 'workflow',
+      title: 'SOP Portal: Operational Process & Quality Gate Review (Draw.io)',
+      subtitle: 'End-to-end lifecycle: form creation, document checklist gate, reviewer revision loops, and digital stamping',
+      src: 'assets/sop-dark-drawio-workflow.png',
+      tag: 'Draw.io Lifecycle'
+    },
+    {
+      id: 'p-wf-hr-stock',
+      category: 'workflow',
+      title: 'Haco P&C Stock: Barcode Requisition & PO-Linked Flowchart (Draw.io)',
+      subtitle: 'Complete system workflow: Employee requisition, inventory auto-reservation, PO stock-in, and barcode dispatch',
+      src: 'assets/hr-drawio-workflow.png',
+      tag: 'Draw.io Workflow'
+    },
+    {
+      id: 'p-wf-doc-builder',
+      category: 'workflow',
+      title: 'Automated Document Builder Architecture (Draw.io)',
+      subtitle: 'System workflow diagram for automated template document generation',
+      src: 'assets/doc-builder-drawio-workflow.png',
+      tag: 'Draw.io Architecture'
     },
     {
       id: 'p-web-hr-sig',
@@ -153,14 +177,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Edit SOP Web UI'
     },
     {
-      id: 'p-web-sop-audit',
-      category: 'webapp',
-      title: 'หน้าเว็บจริง: คิวพิจารณาอนุมัติและรายการส่งกลับแก้ไข',
-      subtitle: 'แสดงสถานะเอกสาร รอผู้ตรวจ รอผู้อนุมัติ และเอกสารที่ถูกส่งกลับพร้อมปุ่มกดแก้ไขเอกสาร',
-      src: 'assets/sop-live-audit.png',
-      tag: 'Approval Queue UI'
-    },
-    {
       id: 'p-web-sop-sig',
       category: 'webapp',
       title: 'หน้าเว็บจริง: ตั้งค่าลายเซ็นดิจิทัล (Digital Signature)',
@@ -175,6 +191,38 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'จำลองการเข้าใช้งานพร้อมกัน 100 คน ยิงทดสอบ 1,100 Requests (0% Error)',
       src: 'assets/sop-jmeter-100users.png',
       tag: 'JMeter Load Test'
+    },
+    {
+      id: 'p-wf-sop-master',
+      category: 'workflow',
+      title: 'ผังสถาปัตยกรรมระบบ SOP: Master Flowchart & Swimlanes (Draw.io)',
+      subtitle: 'แผนภาพ 4 สายงาน (User, Reviewer, Approver, Database) แสดงขั้นตอนการสร้าง ตรวจทาน และอนุมัติ',
+      src: 'assets/sop-drawio-workflow.png',
+      tag: 'Draw.io Architecture'
+    },
+    {
+      id: 'p-wf-sop-lifecycle',
+      category: 'workflow',
+      title: 'ผังขั้นตอนปฏิบัติการ SOP: Process & Quality Gate (Draw.io)',
+      subtitle: 'ผังวงจรชีวิตเอกสาร: สร้างเอกสาร 5 ขั้นตอน, จุดตรวจทาน Checklist, การส่งกลับแก้ไข (Revision) และประทับตรา',
+      src: 'assets/sop-dark-drawio-workflow.png',
+      tag: 'Draw.io Lifecycle'
+    },
+    {
+      id: 'p-wf-hr-stock',
+      category: 'workflow',
+      title: 'ผังระบบเบิกพัสดุและบาร์โค้ดสต็อก Haco P&C (Draw.io)',
+      subtitle: 'ขั้นตอนการขอเบิกพัสดุ จองสต็อกล่วงหน้า การรับเข้าสต็อกผูก PO และการยิงบาร์โค้ดตัดจ่าย',
+      src: 'assets/hr-drawio-workflow.png',
+      tag: 'Draw.io Workflow'
+    },
+    {
+      id: 'p-wf-doc-builder',
+      category: 'workflow',
+      title: 'ผังสถาปัตยกรรมระบบสร้างเอกสารอัตโนมัติ (Draw.io)',
+      subtitle: 'แผนภาพขั้นตอนการสร้างเอกสารอัตโนมัติจากแม่แบบและฐานข้อมูล',
+      src: 'assets/doc-builder-drawio-workflow.png',
+      tag: 'Draw.io Architecture'
     },
     {
       id: 'p-web-hr-sig',
@@ -272,16 +320,18 @@ export default function ActivityGallery({ lang }: Props) {
   const photoTabs =
     lang === 'en'
       ? [
-          { id: 'all', label: `All Screens & Photos (${photos.length})` },
-          { id: 'webapp', label: `Live Web UI & Load Test (9)` },
-          { id: 'training', label: `Copilot Training Photos (4)` },
-          { id: 'dashboard', label: `Power BI & SAP (2)` }
+          { id: 'all', label: `All Items (${photos.length})` },
+          { id: 'webapp', label: `Live Web UI & JMeter (${photos.filter((p) => p.category === 'webapp').length})` },
+          { id: 'workflow', label: `Draw.io Workflows (${photos.filter((p) => p.category === 'workflow').length})` },
+          { id: 'training', label: `Copilot Training Photos (${photos.filter((p) => p.category === 'training').length})` },
+          { id: 'dashboard', label: `Power BI & SAP (${photos.filter((p) => p.category === 'dashboard').length})` }
         ]
       : [
           { id: 'all', label: `ทั้งหมด (${photos.length})` },
-          { id: 'webapp', label: `หน้าจอเว็บจริง & JMeter (9)` },
-          { id: 'training', label: `ภาพถ่ายการสอน Copilot (4)` },
-          { id: 'dashboard', label: `Power BI & SAP (2)` }
+          { id: 'webapp', label: `หน้าจอเว็บจริง & JMeter (${photos.filter((p) => p.category === 'webapp').length})` },
+          { id: 'workflow', label: `ผังระบบ Draw.io (${photos.filter((p) => p.category === 'workflow').length})` },
+          { id: 'training', label: `ภาพถ่ายการสอน Copilot (${photos.filter((p) => p.category === 'training').length})` },
+          { id: 'dashboard', label: `Power BI & SAP (${photos.filter((p) => p.category === 'dashboard').length})` }
         ];
 
   const filteredPhotos =
@@ -310,8 +360,8 @@ export default function ActivityGallery({ lang }: Props) {
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-2">
             {lang === 'en'
-              ? 'Only real web application screens (using anonymized demo accounts), JMeter load test results, and real event photographs are shown.'
-              : 'แสดงเฉพาะหน้าจอ Web Application จริง (ด้วยข้อมูลจำลอง), ผลทดสอบ JMeter และภาพถ่ายการจัดอบรมจริง'}
+              ? 'Real web application screens, Draw.io system architecture workflows, JMeter load tests, and genuine event photographs.'
+              : 'แสดงหน้าจอ Web Application จริง, ผังสถาปัตยกรรมระบบ Draw.io, ผลทดสอบ JMeter และภาพถ่ายการจัดอบรมจริง'}
           </p>
         </div>
 
@@ -358,7 +408,9 @@ export default function ActivityGallery({ lang }: Props) {
                     src={photo.src}
                     alt={photo.title}
                     loading="lazy"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                      photo.category === 'workflow' ? 'object-contain p-2 bg-white' : 'object-cover object-top'
+                    }`}
                   />
                   <div className="absolute top-2.5 left-2.5">
                     <span className="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-blue-600 text-white shadow-sm">
