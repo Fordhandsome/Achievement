@@ -61,7 +61,7 @@ export default function CaseStudyModal({ lang, project, onClose }: Props) {
           exit={{ opacity: 0, scale: 0.96, y: 12 }}
           transition={{ duration: 0.22 }}
           onClick={(e) => e.stopPropagation()}
-          className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white border border-sky-200 rounded-2xl shadow-2xl text-slate-900"
+          className="w-full max-w-5xl max-h-[92vh] overflow-y-auto bg-white border border-sky-200 rounded-2xl shadow-2xl text-slate-900"
         >
           {/* Sticky Header */}
           <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-xl px-6 py-4 border-b border-sky-100 flex items-start justify-between gap-4">
@@ -87,12 +87,12 @@ export default function CaseStudyModal({ lang, project, onClose }: Props) {
             {/* Gallery Carousel */}
             {hasGallery && currentSlide && (
               <div className="rounded-2xl bg-slate-50 border border-sky-100 overflow-hidden">
-                <div className="relative flex items-center justify-center bg-slate-100/80 min-h-[260px] sm:min-h-[380px] max-h-[480px]">
+                <div className="relative flex items-center justify-center bg-slate-100/80 min-h-[300px] sm:min-h-[460px] max-h-[600px]">
                   <img
                     src={currentSlide.src}
                     alt={currentSlide.caption}
                     onClick={() => setIsZoomed(true)}
-                    className="max-h-[460px] w-full object-contain cursor-zoom-in"
+                    className="max-h-[580px] w-full object-contain cursor-zoom-in"
                   />
 
                   <button
