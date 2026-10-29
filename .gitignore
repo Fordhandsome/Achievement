@@ -13,14 +13,16 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 
-# Editor & OS files
+# Editor, Office Temp & Internal Spreadsheets
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 desktop.ini
+~$*
+*.xlsx
+Resume Thamawut (Original).pdf
 
 # Agent & Temp
 .gemini/
 *.tmp
-

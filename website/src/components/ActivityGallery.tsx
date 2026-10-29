@@ -1,185 +1,291 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, Eye, X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { Language } from '../data/portfolioData';
 
 export interface GalleryPhoto {
   id: string;
-  category: 'training' | 'workshop' | 'webapp' | 'dashboard';
+  category: 'webapp' | 'training' | 'dashboard';
   title: string;
   subtitle: string;
   src: string;
   tag: string;
 }
 
-export const ALL_PHOTOS: GalleryPhoto[] = [
-  {
-    id: 'p-speaker',
-    category: 'training',
-    title: 'วิทยากรบรรยายการประยุกต์ใช้ Copilot AI',
-    subtitle: 'บรรยายการนำ Word + Copilot ต่อยอดข้อมูลสินค้าเป็นเอกสารและสื่อหลายรูปแบบ ณ ห้องประชุมใหญ่',
-    src: 'assets/copilot-speaker.jpg',
-    tag: 'การบรรยายจริง'
-  },
-  {
-    id: 'p-group',
-    category: 'training',
-    title: 'ภาพรวมผู้เข้าอบรมหลักสูตร AI for Modern Workplace',
-    subtitle: 'ถ่ายภาพร่วมกับตัวแทนพนักงานจากหลากหลายแผนก (Marketing, Warehouse, Account, Graphic, Sales)',
-    src: 'assets/copilot-group.jpg',
-    tag: 'ผู้เข้าร่วมอบรม'
-  },
-  {
-    id: 'p-coaching',
-    category: 'training',
-    title: 'การโค้ชชิ่งและแนะนำ Prompt แบบตัวต่อตัว',
-    subtitle: 'เดินประกบสอนเทคนิคการเขียนคำสั่ง Prompt ให้ตรงกับงานของแต่ละฝ่ายระหว่างทำ Workshop',
-    src: 'assets/copilot-coaching.jpg',
-    tag: 'Hands-on Coaching'
-  },
-  {
-    id: 'p-classroom',
-    category: 'training',
-    title: 'บรรยากาศในห้องอบรมเชิงปฏิบัติการ',
-    subtitle: 'พนักงานทุกคนเปิดคอมพิวเตอร์และทดลองสั่งงาน AI Copilot ร่วมกับงานจริงของบริษัท',
-    src: 'assets/copilot-classroom.jpg',
-    tag: 'บรรยากาศห้องอบรม'
-  },
-  {
-    id: 'p-ws-sale',
-    category: 'workshop',
-    title: 'ผลงาน Workshop: แผนกขาย (Sales)',
-    subtitle: 'ใช้ Copilot วิเคราะห์ข้อมูลสินค้าและแปลงเป็นใบนำเสนอขายพร้อมราคาและจุดเด่นสำหรับลูกค้า',
-    src: 'assets/copilot-workshop-sale.png',
-    tag: 'ผลงานฝ่ายขาย'
-  },
-  {
-    id: 'p-ws-mkt',
-    category: 'workshop',
-    title: 'ผลงาน Workshop: แผนกการตลาด (Marketing)',
-    subtitle: 'ใช้ Copilot คัดเลือกสินค้าขายดีอันดับ 1 มาทำโปสเตอร์ Key Selling Point และช่องทางสั่งซื้อ',
-    src: 'assets/copilot-workshop-marketing.png',
-    tag: 'ผลงานฝ่ายการตลาด'
-  },
-  {
-    id: 'p-ws-np',
-    category: 'workshop',
-    title: 'ผลงาน Workshop: แผนกสินค้าใหม่ (New Product)',
-    subtitle: 'สรุปคุณลักษณะทางเทคนิคและทำเอกสารแนะนำอุปกรณ์ข้อต่อรางเดินสายไฟมาตรฐาน',
-    src: 'assets/copilot-workshop-new-product.png',
-    tag: 'ผลงานฝ่ายพัฒนาสินค้า'
-  },
-  {
-    id: 'p-ws-hr',
-    category: 'workshop',
-    title: 'ผลงาน Workshop: แผนกทรัพยากรบุคคล (HR)',
-    subtitle: 'สรุปข้อมูลสวัสดิการและเอกสารแจ้งพนักงานด้วยการเขียนคำสั่งผ่าน Copilot Chat',
-    src: 'assets/copilot-workshop-hr.png',
-    tag: 'ผลงานฝ่าย HR'
-  },
-  {
-    id: 'p-ws-purchase',
-    category: 'workshop',
-    title: 'ผลงาน Workshop: แผนกจัดซื้อ (Purchasing)',
-    subtitle: 'จัดตารางเปรียบเทียบ Supplier และเงื่อนไขการส่งมอบสินค้าด้วยระบบ AI ผู้ช่วย',
-    src: 'assets/copilot-workshop-purchasing.png',
-    tag: 'ผลงานฝ่ายจัดซื้อ'
-  },
-  {
-    id: 'p-web-sop-build',
-    category: 'webapp',
-    title: 'หน้าจอจริง: ระบบ SOP Generator (ความครบถ้วน 100%)',
-    subtitle: 'กรอกข้อมูลควบคุมเอกสาร 5 ขั้นตอน มีระบบเช็กความสมบูรณ์แบบเรียลไทม์ก่อนดาวน์โหลด Word',
-    src: 'assets/sop-web-generator-full.png',
-    tag: 'หน้าจอเว็บจริง'
-  },
-  {
-    id: 'p-web-sop-audit',
-    category: 'webapp',
-    title: 'หน้าจอจริง: AI ตรวจสอบลายเซ็น 3 ช่องและคำผิด',
-    subtitle: 'ระบบสแกนตรวจสอบความถูกต้องของแบบฟอร์ม ลายเซ็น 3 ฝ่าย และตรวจคำผิดก่อนปลดล็อกตราประทับ',
-    src: 'assets/sop-web-audit-full.png',
-    tag: 'AI Audit'
-  },
-  {
-    id: 'p-web-sop-stamp',
-    category: 'webapp',
-    title: 'หน้าจอจริง: เอกสาร PDF ที่ประทับตรา SOP APPROVED',
-    subtitle: 'ตัวอย่างไฟล์ที่ผ่านเกณฑ์ ระบบฝังตราประทับดิจิทัลสีแดงลงบนหน้าเอกสารทันทีแบบ Non-Paper',
-    src: 'assets/sop-web-stamped-pdf.png',
-    tag: 'Digital Stamp'
-  },
-  {
-    id: 'p-web-sop-jmeter',
-    category: 'webapp',
-    title: 'รายงาน Apache JMeter: ทดสอบรับโหลด 100 Users',
-    subtitle: 'จำลองการเข้าใช้งานพร้อมกัน 100 คน กดทดสอบ 1,100 ครั้ง ผ่าน 100% ไม่พัง ไม่ล่ม',
-    src: 'assets/sop-jmeter-100users.png',
-    tag: 'Load Test 100 Users'
-  },
-  {
-    id: 'p-web-hr-stock',
-    category: 'webapp',
-    title: 'หน้าจอจริง: เมนู Stock on hand จัดการพัสดุเรียลไทม์',
-    subtitle: 'ตารางบริหารสต็อกอุปกรณ์สำนักงาน แสดงยอดคงเหลือ ยอดจองรอจ่าย ยอดพร้อมเบิก และเกณฑ์ขั้นต่ำ',
-    src: 'assets/hr-web-stock-on-hand.png',
-    tag: 'หน้าจอเว็บจริง'
-  },
-  {
-    id: 'p-web-hr-items',
-    category: 'webapp',
-    title: 'หน้าจอจริง: ฝั่งพนักงานเลือกพัสดุและดูตำแหน่งตู้เก็บ',
-    subtitle: 'หน้าค้นหาพัสดุ แสดงรหัส บาร์โค้ด ตู้จัดเก็บ และสต็อกคงเหลือจริงแบบ Real-time',
-    src: 'assets/hr-web-step2-items.png',
-    tag: 'ฝั่งพนักงาน'
-  },
-  {
-    id: 'p-web-hr-sig',
-    category: 'webapp',
-    title: 'หน้าจอจริง: เซ็นชื่ออิเล็กทรอนิกส์ยืนยันการเบิก',
-    subtitle: 'ช่องลงลายมือชื่อดิจิทัลผ่านหน้าจอสัมผัสสมาร์ตโฟนหรือคอมพิวเตอร์ ป้องกันการสวมสิทธิ์',
-    src: 'assets/hr-web-step3-signature.png',
-    tag: 'Digital Signature'
-  },
-  {
-    id: 'p-web-hr-a4',
-    category: 'webapp',
-    title: 'หน้าจอจริง: ใบเบิกพัสดุมาตรฐานขนาด A4 อัตโนมัติ',
-    subtitle: 'หลังสแกนจ่ายของเสร็จ ระบบสร้างใบเบิก A4 พร้อมเลข REQ และสถานะ APPROVED ให้ทันที',
-    src: 'assets/hr-web-print-a4.png',
-    tag: 'ใบเบิกอัตโนมัติ'
-  },
-  {
-    id: 'p-dash-yoy',
-    category: 'dashboard',
-    title: 'Power BI: สรุปยอดขายข้ามปี 2025 vs 2026 (ดึงตรงจาก SAP)',
-    subtitle: 'เปรียบเทียบแนวโน้มยอดขายรายเดือน ไตรมาส และกลุ่มสินค้า (เบลอข้อมูลความลับแล้ว)',
-    src: 'assets/pbi-multiyear-masked.png',
-    tag: 'Power BI & SAP'
-  },
-  {
-    id: 'p-dash-sml',
-    category: 'dashboard',
-    title: 'Power BI: แดชบอร์ดติดตามยอดขายเทียบเป้า Smart Life',
-    subtitle: 'เจาะลึกยอดขายรายพนักงาน รายลูกค้า และเทียบยอดคำสั่งซื้อแบบ On-Demand (เบลอความลับแล้ว)',
-    src: 'assets/pbi-smart-life-masked.png',
-    tag: 'Power BI & SAP'
-  }
-];
+const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
+  en: [
+    {
+      id: 'p-web-sop-create',
+      category: 'webapp',
+      title: 'SOP Portal: 5-Step Create SOP Form (100% Readiness)',
+      subtitle: 'Guided web form for entering document control data with real-time completeness validation and Word export',
+      src: 'assets/sop-live-create.png',
+      tag: 'Create SOP Web UI'
+    },
+    {
+      id: 'p-web-sop-edit',
+      category: 'webapp',
+      title: 'SOP Portal: Edit / Revision Workflow (Returned SOP)',
+      subtitle: 'Displays reviewer comments, annotation pins, revision number, and one-click re-submission to approver',
+      src: 'assets/sop-live-edit.png',
+      tag: 'Edit SOP Web UI'
+    },
+    {
+      id: 'p-web-sop-audit',
+      category: 'webapp',
+      title: 'SOP Portal: Automated 3-Signature & Completeness Audit',
+      subtitle: 'Verifies Issuer, Reviewer, and Approver signatures and form completeness before unlocking digital stamping',
+      src: 'assets/sop-live-audit.png',
+      tag: 'Approval Audit UI'
+    },
+    {
+      id: 'p-web-sop-sig',
+      category: 'webapp',
+      title: 'SOP Portal: Digital Signature Pad Modal',
+      subtitle: 'Allows approvers to draw or upload their official signature for SOP approval stamping',
+      src: 'assets/sop-live-signature.png',
+      tag: 'Digital Signature UI'
+    },
+    {
+      id: 'p-web-sop-jmeter',
+      category: 'webapp',
+      title: 'Apache JMeter Load Test: 100 Concurrent Users (0% Error)',
+      subtitle: 'Stress-tested with 100 concurrent users and 1,100 total requests with 100% pass rate',
+      src: 'assets/sop-jmeter-100users.png',
+      tag: 'JMeter Load Test'
+    },
+    {
+      id: 'p-web-hr-sig',
+      category: 'webapp',
+      title: 'Haco P&C Stock: Requisition Summary & E-Signature Pad',
+      subtitle: 'Employees review requested items and sign electronically via mobile touchscreen or desktop mouse',
+      src: 'assets/hr-live-signature.png',
+      tag: 'Requisition Web UI'
+    },
+    {
+      id: 'p-web-hr-success',
+      category: 'webapp',
+      title: 'Haco P&C Stock: Instant Requisition Number (REQ)',
+      subtitle: 'Confirmation screen after submitting a signed request into the HR barcode dispatch queue',
+      src: 'assets/hr-live-success.png',
+      tag: 'Confirmation Web UI'
+    },
+    {
+      id: 'p-web-hr-inbound',
+      category: 'webapp',
+      title: 'Haco P&C Stock: PO-Linked Stock-In Barcode Screen',
+      subtitle: 'Binds incoming supplies to a Purchase Order (PO) number before barcode scanning',
+      src: 'assets/hr-live-inbound.png',
+      tag: 'Stock-In Web UI'
+    },
+    {
+      id: 'p-web-hr-queue',
+      category: 'webapp',
+      title: 'Haco P&C Stock: HR Requisition Dispatch Queue',
+      subtitle: 'Web interface for HR staff to verify and auto-approve outbound requisitions via barcode scanner',
+      src: 'assets/hr-live-queue.png',
+      tag: 'Dispatch Queue UI'
+    },
+    {
+      id: 'p-speaker',
+      category: 'training',
+      title: 'Speaker: Internal Microsoft 365 Copilot Training',
+      subtitle: 'Conducting a training session on using Microsoft Copilot for document workflows in the main conference room',
+      src: 'assets/copilot-speaker.jpg',
+      tag: 'Live Training'
+    },
+    {
+      id: 'p-group',
+      category: 'training',
+      title: 'Participants: AI for Modern Workplace Training Session',
+      subtitle: 'Group photo with employees from multiple departments after completing the Copilot training session',
+      src: 'assets/copilot-group.jpg',
+      tag: 'Training Session'
+    },
+    {
+      id: 'p-coaching',
+      category: 'training',
+      title: '1-on-1 Prompt Engineering Coaching',
+      subtitle: 'Helping team members craft effective prompts tailored to their specific departmental tasks',
+      src: 'assets/copilot-coaching.jpg',
+      tag: 'Hands-on Coaching'
+    },
+    {
+      id: 'p-classroom',
+      category: 'training',
+      title: 'Hands-On Classroom Practice',
+      subtitle: 'Employees practicing Microsoft Copilot workflows on their laptops during the training session',
+      src: 'assets/copilot-classroom.jpg',
+      tag: 'Classroom Session'
+    },
+    {
+      id: 'p-dash-yoy',
+      category: 'dashboard',
+      title: 'Power BI: Multi-Year Sales Comparison (2025 vs 2026)',
+      subtitle: 'Connected to SAP data pipeline to compare monthly, quarterly, and category sales (confidential numbers blurred)',
+      src: 'assets/pbi-multiyear-masked.png',
+      tag: 'Power BI & SAP'
+    },
+    {
+      id: 'p-dash-sml',
+      category: 'dashboard',
+      title: 'Power BI: Smart Life Division Performance Dashboard',
+      subtitle: 'Tracks sales against targets, quotations, and customer breakdown (confidential numbers blurred)',
+      src: 'assets/pbi-smart-life-masked.png',
+      tag: 'Power BI & SAP'
+    }
+  ],
+  th: [
+    {
+      id: 'p-web-sop-create',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: สร้างเอกสาร SOP 5 ขั้นตอน (ความครบถ้วน 100%)',
+      subtitle: 'หน้ากรอกข้อมูลควบคุมเอกสารพร้อมตรวจสอบความครบถ้วนแบบเรียลไทม์ก่อนดาวน์โหลดไฟล์ Word',
+      src: 'assets/sop-live-create.png',
+      tag: 'Create SOP Web UI'
+    },
+    {
+      id: 'p-web-sop-edit',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: แก้ไขเอกสาร SOP เมื่อถูกตีกลับ (Revision)',
+      subtitle: 'แสดงข้อความคอมเมนต์จากผู้ตรวจ จุดที่ต้องแก้ไข เลขครั้งที่แก้ไข และปุ่มส่งอนุมัติใหม่',
+      src: 'assets/sop-live-edit.png',
+      tag: 'Edit SOP Web UI'
+    },
+    {
+      id: 'p-web-sop-audit',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: ตรวจเช็กลายเซ็น 3 ช่องและความสมบูรณ์ของฟอร์ม',
+      subtitle: 'ตรวจสอบลายมือชื่อ ผู้ออกเอกสาร ผู้ตรวจสอบ ผู้อนุมัติ และความครบถ้วนก่อนประทับตรา',
+      src: 'assets/sop-live-audit.png',
+      tag: 'Approval Audit UI'
+    },
+    {
+      id: 'p-web-sop-sig',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: ตั้งค่าลายเซ็นดิจิทัล (Digital Signature)',
+      subtitle: 'หน้าต่างสำหรับวาดลายเซ็นบนหน้าจอหรืออัปโหลดไฟล์ลายเซ็นเพื่อใช้ในการอนุมัติ SOP',
+      src: 'assets/sop-live-signature.png',
+      tag: 'Digital Signature UI'
+    },
+    {
+      id: 'p-web-sop-jmeter',
+      category: 'webapp',
+      title: 'ผลทดสอบ Apache JMeter: รองรับผู้ใช้งานพร้อมกัน 100 Users',
+      subtitle: 'จำลองการเข้าใช้งานพร้อมกัน 100 คน ยิงทดสอบ 1,100 Requests ผ่าน 100% (0% Error)',
+      src: 'assets/sop-jmeter-100users.png',
+      tag: 'JMeter Load Test'
+    },
+    {
+      id: 'p-web-hr-sig',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: สรุปรายการขอเบิกพัสดุและเซ็นชื่ออิเล็กทรอนิกส์',
+      subtitle: 'หน้าตรวจสอบรายการเบิกและลงลายมือชื่อดิจิทัลผ่านหน้าจอมือถือหรือคอมพิวเตอร์',
+      src: 'assets/hr-live-signature.png',
+      tag: 'Requisition Web UI'
+    },
+    {
+      id: 'p-web-hr-success',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: ยืนยันคำขอเบิกและออกเลขใบเบิก (REQ) อัตโนมัติ',
+      subtitle: 'หน้าแจ้งผลส่งคำขอเข้าคิวเบิกจ่ายของเจ้าหน้าที่ HR พร้อมบันทึกลายเซ็นเรียบร้อย',
+      src: 'assets/hr-live-success.png',
+      tag: 'Confirmation Web UI'
+    },
+    {
+      id: 'p-web-hr-inbound',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: รับพัสดุเข้าสต็อกด้วยการผูกเลขที่เอกสาร PO',
+      subtitle: 'หน้าสำหรับกรอกเลข PO ก่อนเริ่มยิงบาร์โค้ดรับสินค้าเข้าคลัง',
+      src: 'assets/hr-live-inbound.png',
+      tag: 'Stock-In Web UI'
+    },
+    {
+      id: 'p-web-hr-queue',
+      category: 'webapp',
+      title: 'หน้าเว็บจริง: คิวรอจ่ายพัสดุและสแกนบาร์โค้ด (Requisition Queue)',
+      subtitle: 'หน้าจัดการคิวคำขอเบิกสำหรับเจ้าหน้าที่ HR สแกนบาร์โค้ดจ่ายของ',
+      src: 'assets/hr-live-queue.png',
+      tag: 'Dispatch Queue UI'
+    },
+    {
+      id: 'p-speaker',
+      category: 'training',
+      title: 'วิทยากรอบรมการใช้งาน Microsoft 365 Copilot ภายในบริษัท',
+      subtitle: 'บรรยายการนำ Copilot มาช่วยงานเอกสารและสรุปข้อมูล ณ ห้องประชุมใหญ่',
+      src: 'assets/copilot-speaker.jpg',
+      tag: 'Live Training'
+    },
+    {
+      id: 'p-group',
+      category: 'training',
+      title: 'ภาพถ่ายร่วมกับผู้เข้าอบรมหลักสูตร AI for Modern Workplace',
+      subtitle: 'ตัวแทนพนักงานจากหลากหลายแผนกที่เข้าร่วมอบรมการใช้ AI ในการทำงาน',
+      src: 'assets/copilot-group.jpg',
+      tag: 'Training Session'
+    },
+    {
+      id: 'p-coaching',
+      category: 'training',
+      title: 'แนะนำการเขียนคำสั่ง Prompt แบบตัวต่อตัว',
+      subtitle: 'เดินประกบให้คำแนะนำการปรับแต่ง Prompt ให้เหมาะกับงานจริงของแต่ละแผนก',
+      src: 'assets/copilot-coaching.jpg',
+      tag: 'Hands-on Coaching'
+    },
+    {
+      id: 'p-classroom',
+      category: 'training',
+      title: 'บรรยากาศการฝึกปฏิบัติจริงในห้องอบรม',
+      subtitle: 'พนักงานทดลองใช้งาน Microsoft Copilot บนคอมพิวเตอร์ไปพร้อมกับการบรรยาย',
+      src: 'assets/copilot-classroom.jpg',
+      tag: 'Classroom Session'
+    },
+    {
+      id: 'p-dash-yoy',
+      category: 'dashboard',
+      title: 'Power BI: เปรียบเทียบยอดขายข้ามปี 2025 vs 2026 (ดึงจาก SAP)',
+      subtitle: 'วิเคราะห์แนวโน้มยอดขายรายเดือน ไตรมาส และหมวดหมู่สินค้า (เบลอข้อมูลความลับแล้ว)',
+      src: 'assets/pbi-multiyear-masked.png',
+      tag: 'Power BI & SAP'
+    },
+    {
+      id: 'p-dash-sml',
+      category: 'dashboard',
+      title: 'Power BI: แดชบอร์ดติดตามยอดขายเทียบเป้าหมายแผนก Smart Life',
+      subtitle: 'ติดตามยอดขายและใบเสนอราคาจากฐานข้อมูล SAP (เบลอข้อมูลความลับแล้ว)',
+      src: 'assets/pbi-smart-life-masked.png',
+      tag: 'Power BI & SAP'
+    }
+  ]
+};
 
-const PHOTO_TABS = [
-  { id: 'all', label: `รูปทั้งหมด (${ALL_PHOTOS.length})` },
-  { id: 'training', label: 'บรรยากาศการสอน Copilot (4)' },
-  { id: 'workshop', label: 'ผลงาน Workshop 5 แผนก (5)' },
-  { id: 'webapp', label: 'หน้าจอระบบเว็บจริง (8)' },
-  { id: 'dashboard', label: 'Power BI & SAP (2)' }
-];
+interface Props {
+  lang: Language;
+}
 
-export default function ActivityGallery() {
+export default function ActivityGallery({ lang }: Props) {
   const [filter, setFilter] = useState<string>('all');
   const [activePhotoIdx, setActivePhotoIdx] = useState<number | null>(null);
 
+  const photos = PHOTOS_BY_LANG[lang];
+
+  const photoTabs =
+    lang === 'en'
+      ? [
+          { id: 'all', label: `All Screens & Photos (${photos.length})` },
+          { id: 'webapp', label: `Live Web UI & Load Test (9)` },
+          { id: 'training', label: `Copilot Training Photos (4)` },
+          { id: 'dashboard', label: `Power BI & SAP (2)` }
+        ]
+      : [
+          { id: 'all', label: `ทั้งหมด (${photos.length})` },
+          { id: 'webapp', label: `หน้าจอเว็บจริง & JMeter (9)` },
+          { id: 'training', label: `ภาพถ่ายการสอน Copilot (4)` },
+          { id: 'dashboard', label: `Power BI & SAP (2)` }
+        ];
+
   const filteredPhotos =
-    filter === 'all' ? ALL_PHOTOS : ALL_PHOTOS.filter((p) => p.category === filter);
+    filter === 'all' ? photos : photos.filter((p) => p.category === filter);
 
   const currentPhoto = activePhotoIdx !== null ? filteredPhotos[activePhotoIdx] : null;
 
@@ -190,25 +296,37 @@ export default function ActivityGallery() {
         <div className="text-center max-w-2xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-sky-200 text-sky-800 text-xs font-bold mb-3 shadow-xs">
             <Camera className="w-3.5 h-3.5 text-sky-600" />
-            <span>REAL EVIDENCE • คลังภาพกิจกรรมและหลักฐานผลงานจริง</span>
+            <span>
+              {lang === 'en'
+                ? 'SYSTEM SCREENS & TRAINING GALLERY'
+                : 'คลังภาพหน้าจอเว็บจริงและภาพถ่ายการอบรม'}
+            </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            รวมภาพการทำงานจริง <span className="gradient-text-blue">จัดเต็มทุกขั้นตอน</span>
+            {lang === 'en' ? 'Live Web UI Screens & ' : 'ภาพหน้าจอระบบเว็บจริงและ '}
+            <span className="gradient-text-blue">
+              {lang === 'en' ? 'Real Training Photos' : 'บรรยากาศการสอนจริง'}
+            </span>
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-2">
-            ภาพบรรยากาศการจัดอบรม Copilot ในห้องประชุมใหญ่, ชิ้นงานจริงจาก Workshop 5 แผนก และภาพหน้าจอระบบจริง
+            {lang === 'en'
+              ? 'Only real web application screens (using anonymized demo accounts), JMeter load test results, and real event photographs are shown.'
+              : 'แสดงเฉพาะหน้าจอ Web Application จริง (ด้วยข้อมูลจำลอง), ผลทดสอบ JMeter และภาพถ่ายการจัดอบรมจริง'}
           </p>
         </div>
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {PHOTO_TABS.map((tab) => {
+          {photoTabs.map((tab) => {
             const isActive = filter === tab.id;
             return (
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setFilter(tab.id)}
+                onClick={() => {
+                  setFilter(tab.id);
+                  setActivePhotoIdx(null);
+                }}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold border transition-all duration-200 ${
                   isActive
                     ? 'bg-blue-600 border-blue-600 text-white shadow-sm'
@@ -266,7 +384,7 @@ export default function ActivityGallery() {
                   <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-sky-700">
                     <span className="inline-flex items-center gap-1">
                       <Sparkles className="w-3 h-3 text-sky-500" />
-                      คลิกเพื่อดูรูปขนาดเต็ม
+                      {lang === 'en' ? 'Click to view full screen' : 'คลิกเพื่อดูรูปขนาดเต็ม'}
                     </span>
                     <span className="text-slate-400 font-mono text-[10px]">
                       #{idx + 1}
@@ -354,7 +472,9 @@ export default function ActivityGallery() {
                     {currentPhoto.subtitle}
                   </p>
                   <span className="text-xs font-bold text-blue-700 shrink-0 font-mono">
-                    ภาพที่ {activePhotoIdx + 1} จาก {filteredPhotos.length}
+                    {lang === 'en'
+                      ? `${activePhotoIdx + 1} of ${filteredPhotos.length}`
+                      : `ภาพที่ ${activePhotoIdx + 1} จาก ${filteredPhotos.length}`}
                   </span>
                 </div>
               </motion.div>
@@ -365,4 +485,3 @@ export default function ActivityGallery() {
     </section>
   );
 }
-

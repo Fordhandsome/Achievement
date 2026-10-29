@@ -1,27 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Images, ShieldCheck, Eye, FolderKanban, Video } from 'lucide-react';
-import { PROJECTS, ProjectCategory, ProjectCaseStudy } from '../data/portfolioData';
+import { PROJECTS_BY_LANG, ProjectCategory, ProjectCaseStudy, Language } from '../data/portfolioData';
 
 interface Props {
+  lang: Language;
   onSelectProject: (project: ProjectCaseStudy) => void;
 }
-
-const FILTER_TABS: { id: ProjectCategory; label: string }[] = [
-  { id: 'all', label: `ทั้งหมด (${PROJECTS.length})` },
-  {
-    id: 'webapp',
-    label: `เว็บแอป (Web App) (${PROJECTS.filter((p) => p.category === 'webapp').length})`
-  },
-  {
-    id: 'dashboard',
-    label: `แดชบอร์ด (Dashboard) (${PROJECTS.filter((p) => p.category === 'dashboard').length})`
-  },
-  {
-    id: 'ai-it',
-    label: `สอน Copilot & ห้องประชุม Teams (${PROJECTS.filter((p) => p.category === 'ai-it').length})`
-  }
-];
 
 const BADGE_STYLES: Record<Exclude<ProjectCategory, 'all'>, string> = {
   webapp: 'bg-sky-600 text-white border-sky-400',
@@ -29,15 +14,49 @@ const BADGE_STYLES: Record<Exclude<ProjectCategory, 'all'>, string> = {
   'ai-it': 'bg-indigo-600 text-white border-indigo-400'
 };
 
-export default function ProjectsShowcase({ onSelectProject }: Props) {
+export default function ProjectsShowcase({ lang, onSelectProject }: Props) {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>('all');
-  // Store which photo is previewed on each card (cardId -> photoSrc)
   const [activeCardPhotos, setActiveCardPhotos] = useState<Record<string, string>>({});
+
+  const projects = PROJECTS_BY_LANG[lang];
+
+  const filterTabs: { id: ProjectCategory; label: string }[] =
+    lang === 'en'
+      ? [
+          { id: 'all', label: `All Projects (${projects.length})` },
+          {
+            id: 'webapp',
+            label: `Web Applications (${projects.filter((p) => p.category === 'webapp').length})`
+          },
+          {
+            id: 'dashboard',
+            label: `BI & SAP Dashboards (${projects.filter((p) => p.category === 'dashboard').length})`
+          },
+          {
+            id: 'ai-it',
+            label: `AI Enablement & IT (${projects.filter((p) => p.category === 'ai-it').length})`
+          }
+        ]
+      : [
+          { id: 'all', label: `ทั้งหมด (${projects.length})` },
+          {
+            id: 'webapp',
+            label: `เว็บแอป (Web App) (${projects.filter((p) => p.category === 'webapp').length})`
+          },
+          {
+            id: 'dashboard',
+            label: `แดชบอร์ด (Dashboard) (${projects.filter((p) => p.category === 'dashboard').length})`
+          },
+          {
+            id: 'ai-it',
+            label: `อบรม AI & ระบบ IT (${projects.filter((p) => p.category === 'ai-it').length})`
+          }
+        ];
 
   const filtered =
     activeFilter === 'all'
-      ? PROJECTS
-      : PROJECTS.filter((proj) => proj.category === activeFilter);
+      ? projects
+      : projects.filter((proj) => proj.category === activeFilter);
 
   const handleThumbClick = (projectId: string, src: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -47,23 +66,30 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
   return (
     <section id="projects" className="py-10 sm:py-14 relative z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Compact Header */}
+        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 border border-sky-200 text-sky-800 text-xs font-bold mb-3">
             <FolderKanban className="w-3.5 h-3.5 text-sky-600" />
-            <span>PORTFOLIO • ผลงานจริงของฟอร์ด (แผนก DX)</span>
+            <span>
+              {lang === 'en'
+                ? 'PORTFOLIO • DELIVERED ENTERPRISE PROJECTS'
+                : 'PORTFOLIO • ผลงานที่พัฒนาและใช้งานจริง'}
+            </span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            สรุปผลงานที่ทำจริง <span className="gradient-text-blue">Web App • Dashboard • AI & IT</span>
-          </h1>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            {lang === 'en' ? 'Delivered Systems ' : 'สรุปผลงานที่ทำจริง '}
+            <span className="gradient-text-blue">Web App • SAP BI • AI & IT</span>
+          </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            รวมโปรเจกต์ที่ลงมือทำเองทั้งหมด พร้อมรูปภาพหน้าจอและภาพกิจกรรมจริง กดที่รูปเพื่อดูรูปขยายได้เลยครับ
+            {lang === 'en'
+              ? 'Production web applications, automated SAP/Power BI dashboards, and corporate AI enablement. Click any card or thumbnail to inspect real system screens.'
+              : 'รวมโปรเจกต์เว็บแอปพลิเคชัน แดชบอร์ดเชื่อมต่อ SAP และงานฝึกอบรม AI พร้อมภาพหน้าจอจากเว็บจริง'}
           </p>
         </div>
 
         {/* Category Filter Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-9">
-          {FILTER_TABS.map((tab) => {
+          {filterTabs.map((tab) => {
             const isActive = activeFilter === tab.id;
             return (
               <button
@@ -121,10 +147,12 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
                           <Video className="w-8 h-8" />
                         </div>
                         <span className="text-sm font-bold text-blue-900">
-                          Microsoft Teams Meeting Room
+                          Microsoft Teams Meeting Room & Auto-Booking
                         </span>
                         <span className="text-xs text-sky-700 mt-0.5">
-                          ดำเนินการติดตั้งและเซ็ตอัประบบเสร็จใน 4 วัน
+                          {lang === 'en'
+                            ? 'Hardware/AV integration & automated room booking completed in 4 days'
+                            : 'ติดตั้งอุปกรณ์ห้องประชุมและทำระบบจองห้องผ่าน Teams เสร็จใน 4 วัน'}
                         </span>
                       </div>
                     )}
@@ -142,7 +170,7 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
                       {project.gallery.length > 0 && (
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/95 text-slate-800 border border-slate-200 shadow-sm">
                           <Images className="w-3.5 h-3.5 text-sky-600" />
-                          {project.gallery.length} รูป
+                          {project.gallery.length} {lang === 'en' ? 'Screens' : 'รูป'}
                         </span>
                       )}
                     </div>
@@ -150,16 +178,18 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
                     {project.privacyNote && (
                       <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/95 border border-emerald-300 text-emerald-700 text-[11px] font-semibold shadow-sm">
                         <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>เบลอข้อมูลความลับแล้ว</span>
+                        <span>
+                          {lang === 'en' ? 'Data Privacy Protected' : 'ปกป้องข้อมูลความลับบริษัท'}
+                        </span>
                       </div>
                     )}
                   </div>
 
-                  {/* Thumbnail Bar on Card (Show multiple photos right on the card!) */}
+                  {/* Thumbnail Bar on Card */}
                   {project.gallery.length > 1 && (
                     <div className="px-4 py-2 bg-sky-50/70 border-b border-sky-100 flex items-center gap-2 overflow-x-auto">
                       <span className="text-[10px] font-extrabold uppercase text-slate-500 shrink-0">
-                        เลือกดูรูป:
+                        {lang === 'en' ? 'Preview:' : 'เลือกดูรูป:'}
                       </span>
                       {project.gallery.slice(0, 5).map((img) => {
                         const isSelected =
@@ -181,23 +211,14 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
                           </button>
                         );
                       })}
-                      {project.gallery.length > 5 && (
-                        <button
-                          type="button"
-                          onClick={() => onSelectProject(project)}
-                          className="text-[11px] font-bold text-blue-700 bg-white border border-sky-200 px-2 py-1 rounded-lg shrink-0 hover:bg-sky-100"
-                        >
-                          +{project.gallery.length - 5} รูป
-                        </button>
-                      )}
                     </div>
                   )}
 
                   {/* Card Body */}
                   <div className="p-5 sm:p-6 flex flex-col flex-1">
-                    <h2 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug mb-1 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug mb-1 group-hover:text-blue-600 transition-colors">
                       {project.title}
-                    </h2>
+                    </h3>
                     <p className="text-xs sm:text-sm font-semibold text-sky-700 mb-2.5">
                       {project.subtitle}
                     </p>
@@ -244,7 +265,11 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
                         <Eye className="w-4 h-4" />
                         <span>
                           {project.gallery.length > 0
-                            ? `ดูรายละเอียด & รูปทั้งหมด (${project.gallery.length})`
+                            ? lang === 'en'
+                              ? `View Details & Screens (${project.gallery.length})`
+                              : `ดูรายละเอียด & รูปทั้งหมด (${project.gallery.length})`
+                            : lang === 'en'
+                            ? 'View Case Study'
                             : 'ดูรายละเอียดงาน'}
                         </span>
                       </button>
@@ -256,7 +281,9 @@ export default function ProjectsShowcase({ onSelectProject }: Props) {
                           rel="noopener noreferrer"
                           className="btn-outline-blue"
                         >
-                          <span>{project.liveLabel || 'เปิดเว็บจริง'}</span>
+                          <span>
+                            {project.liveLabel || (lang === 'en' ? 'Open Live App' : 'เปิดเว็บจริง')}
+                          </span>
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       )}

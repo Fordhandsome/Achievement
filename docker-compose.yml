@@ -11,3 +11,4 @@ services:
       - "3000:80"
     environment:
       - NODE_ENV=production
+

@@ -1,64 +1,80 @@
-# 🚀 Digital Transformation & AI Solutions Portfolio
-### Thamawut Dejaroenviroon (Ford)
-**AI Solution & Process Automation Engineer**  
-📍 Bang Yai, Nonthaburi 11140 | 📞 088-2777-131 | ✉️ kc50jakod@gmail.com  
-🎓 วศ.บ. วิศวกรรมเคมี มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (**เกียรตินิยมอันดับ 2** | GPA: 3.35)
+# Thamawut Dejaroenviroon (Ford) — Portfolio
+
+**AI Solution & Process Automation Specialist**  
+B.Eng. in Chemical Engineering (Second-Class Honors, GPA: 3.35) — KMUTNB  
+Vocational Certificate in Electrical & Electronics — Thai-German Pre-Engineering School, KMUTNB  
+
+- 🌐 **Live Portfolio Website:** [https://fordhandsome.github.io/Achievement/](https://fordhandsome.github.io/Achievement/)
+- 📄 **Resume (PDF):** [Resume-Thamawut-Dejaroenviroon.pdf](https://fordhandsome.github.io/Achievement/Resume-Thamawut-Dejaroenviroon.pdf)
+- 📧 **Contact:** `kc50jakod@gmail.com` | 📞 `088-2777-131` | 📍 Nonthaburi, Thailand
 
 ---
 
-## 🌐 Live Website (เปิดดูหน้าเว็บออนไลน์)
-- **GitHub Pages:** [https://fordhandsome.github.io/Achievement/](https://fordhandsome.github.io/Achievement/) *(คลิกเปิดดูได้ทันทีจากมือถือหรือคอมพิวเตอร์)*
-- **ดาวน์โหลด Resume ฉบับเต็ม:** [📄 Resume Thamawut.pdf](website/public/Resume-Thamawut-Dejaroenviroon.pdf)
+## 👨‍💻 About Me
+
+I am an engineer working on internal software tools, process automation, and business intelligence. With an academic background in **Chemical Engineering** and **Electrical & Electronics**, I apply process flow design, statistical quality control (Cpk / Control Charts), and practical software engineering to build internal web applications and automate repetitive workflows.
+
+### Core Technical Skills
+- **Web & Programming:** TypeScript, JavaScript (ES6+), Python, Next.js, React, Node.js, FastAPI, SQL (MySQL), HTML/CSS, VBA, Git/GitHub
+- **AI & Integration:** Model Context Protocol (MCP API), REST APIs, Claude Code, Codex, Antigravity, Stitch, Microsoft 365 Copilot, Copilot Studio, Prompt Engineering
+- **Automation & Infrastructure:** Docker (`Dockerfile`, `docker-compose`, Nginx), Apache JMeter (Load Testing), Google Apps Script, n8n, Microsoft Power Automate, Draw.io
+- **Data & Quality:** Power BI (connected to SAP), Looker Studio, DAX, Power Query, Cpk Analysis, Control Charts
 
 ---
 
-## 🐳 วิธีรันด้วย Docker (Run with Docker)
-สำหรับผู้ที่ต้องการรันหน้าเว็บในเครื่องตัวเอง สามารถรันคำสั่ง Docker Compose เพียงคำสั่งเดียว:
+## 📂 Delivered Projects
 
+### 1. SOP Generator, Revision & Digital Stamp Web Portal
+- Built an internal web application (Next.js, React, TypeScript, FastAPI) for creating standardized SOP documents in Word and PDF formats.
+- Implemented an inline **Edit / Revision SOP** workflow to track reviewer comments and annotations when documents are returned for edits.
+- Added automated checklist verification for 3 required signatures (Issuer, Reviewer, Approver) and digital approval stamping.
+- Load-tested with **Apache JMeter** at **100 concurrent users** (1,100 requests, 0% error rate).
+
+### 2. Haco P&C Barcode Requisition & Stock Control System
+- Developed a web application (React, TypeScript, Node.js, MySQL) for office supply requisitions and inventory tracking in the P&C (HR) department.
+- Implemented real-time stock reservation locks upon request submission, touchscreen electronic signatures, PO-linked inbound scanning, and barcode scanner dispatch.
+
+### 3. HACO CARD — Business Card Scanner Web App
+- Created a mobile web app using **Google Apps Script** and **AI OCR** (completed in 6 days) that extracts contact details from business card photos into a centralized Google Sheets database.
+- 🔗 **Live App:** [Open Google Apps Script Web App](https://script.google.com/macros/s/AKfycbxWMx3SEmyPvN6GiRFDCS2j-PuGGz66TgX9sq5bERcYhaHVfESCebi14limXNFElQML/exec)
+
+### 4. Sales & Inventory Power BI Dashboards (SAP Integration)
+- Automated sales data preparation from **SAP** and built interactive **Power BI** dashboards covering Multi-Year Sales Comparison (2025 vs 2026), Smart Life division, Project division, and Inventory monitoring.
+
+### 5. Corporate AI Enablement (Microsoft 365 Copilot Training)
+- Prepared training materials and conducted **3 internal training sessions** for company staff on practical usage of Microsoft Copilot, prompt engineering, and internal data privacy guidelines.
+
+### 6. Microsoft Teams Meeting Room Setup & Automated Booking
+- Configured the company's Microsoft Teams conference room system (display, camera, and audio) within 4 days and implemented automated room booking in Microsoft Teams.
+
+---
+
+## 💼 Work Experience
+
+- **AI Solution & Automation Specialist** — *Haco Electric (Thailand) Co., Ltd.* *(Dec 2025 – Present)*
+- **Document Report (Contract)** — *QV TEST COMPANY LIMITED* *(Jul 2025 – Oct 2025)*
+  - Automated Excel reporting templates using VBA, reducing report preparation time by 70%.
+- **QE Engineer** — *Chinpoon Electronics (Thailand) Public Company Limited* *(2024 – 2025)*
+  - Monitored manufacturing quality using Cpk analysis and Control Charts, improving team data accuracy by 30%.
+
+---
+
+## 🐳 Running This Portfolio Website
+
+### Option 1: View Online (No Installation Required)
+Open the live site directly: **[https://fordhandsome.github.io/Achievement/](https://fordhandsome.github.io/Achievement/)**
+
+### Option 2: Run with Docker
 ```bash
-# 1. โคลนคลังโค้ด
 git clone https://github.com/Fordhandsome/Achievement.git
 cd Achievement
-
-# 2. รันด้วย Docker Compose
-docker compose up -d
-
-# 3. เปิดเว็บเบราว์เซอร์
-# เข้าดูได้ที่: http://localhost:3000
+docker compose up -d --build
 ```
+Then open **[http://localhost:3000](http://localhost:3000)** in your browser.
 
----
-
-## 🛠️ สรุปผลงานจริงที่ลงมือทำ (Key Projects & Implementations)
-
-### 1. 📝 AI-Powered Smart SOP Generator & Paperless Stamp
-- **บทบาท/สิ่งที่ทำ:** ออกแบบแบบฟอร์มและพัฒนาเว็บแอปพลิเคชัน 5 ขั้นตอน พร้อมระบบ AI ตรวจสอบความสมบูรณ์ของเอกสาร ลายเซ็น 3 ช่อง และคำผิด
-- **ผลลัพธ์:** เปลี่ยนขั้นตอนเดินแฟ้มกระดาษเดิมเป็นระบบไร้กระดาษ 100% (Non-Paper Use) ฝังตราประทับสีแดง `SOP APPROVED` อัตโนมัติ และผ่านการทดสอบรองรับผู้ใช้งานพร้อมกัน 100 คนด้วย **Apache JMeter**
-
-### 2. 📦 Smart HR & P&C Barcode Asset Stock System
-- **บทบาท/สิ่งที่ทำ:** ออกแบบ Workflow และพัฒนาเว็บแอปพลิเคชันเบิกจ่ายพัสดุและอุปกรณ์สำนักงาน
-- **ผลลัพธ์:** พนักงานยื่นเบิกและเซ็นชื่อดิจิทัลผ่านหน้าจอ (Digital Signature Pad) พร้อมระบบกันสต็อกทันทีก่อนจ่ายของ เจ้าหน้าที่ HR ใช้ปืนยิงบาร์โค้ดสแกนจ่ายของพร้อมเสียงเตือน และออกใบเบิกมาตรฐานขนาด A4 แบบ Real-time
-
-### 3. 📇 HACO CARD — AI OCR Smart Business Card Scanner
-- **บทบาท/สิ่งที่ทำ:** พัฒนา Web Application บน Google Apps Script ให้พนักงานใช้ถ่ายรูปนามบัตรคู่ค้า
-- **ผลลัพธ์:** พัฒนาเสร็จพร้อมใช้งานภายใน 6 วัน มีระบบล็อกอินรหัสพนักงาน ผสาน AI OCR ดึงชื่อ เบอร์โทรศัพท์ และอีเมล บันทึกลงฐานข้อมูลกลางอัตโนมัติ
-
-### 4. 📊 Executive Power BI Dashboards (SAP Direct Integration)
-- **บทบาท/สิ่งที่ทำ:** เชื่อมต่อข้อมูลตรงจากระบบ SAP สร้างโมเดลข้อมูลและเขียน Advanced DAX
-- **ผลลัพธ์:** แดชบอร์ดเปรียบเทียบยอดขายข้ามปี (2025 vs 2026), ติดตามยอดขายเทียบเป้าหมายของแผนก Smart Life และแผนก Project, และแดชบอร์ดตรวจสอบสถานะคลังสินค้า (Inventory) แบบ On-Demand
-
-### 5. 🤖 จัดอบรม & ทำหลักสูตร Microsoft 365 Copilot AI
-- **บทบาท/สิ่งที่ทำ:** จัดทำคู่มือ SOP, สไลด์การสอน และเป็นวิทยากรบรรยายหลักสูตร *"AI for Modern Workplace with Microsoft 365 Copilot"*
-- **ผลลัพธ์:** สอนเทคนิคการเขียนคำสั่ง Prompt ด้วย PREP Framework, จัดโจทย์ Workshop แยกตามแผนกจริง 5 ฝ่าย (Sales, Marketing, HR, New Product, Purchasing) และได้รับผลการประเมินจากผู้เรียนเฉลี่ย 5/5 คะแนน
-
-### 6. 💻 จัดทำระบบห้องประชุมออนไลน์ Microsoft Teams
-- **บทบาท/สิ่งที่ทำ:** ติดตั้งและเซ็ตอัประบบห้องประชุม Microsoft Teams ของบริษัท
-- **ผลลัพธ์:** เชื่อมต่อระบบจอภาพ กล้อง และไมโครโฟน พร้อมส่งมอบงานเสร็จสมบูรณ์ภายใน 4 วัน
-
----
-
-## 💻 Tech Stack & Skills
-- **AI & Agent Tools:** Model Context Protocol (MCP API), Claude Code, Codex, Antigravity, Microsoft Copilot, Prompt Engineering
-- **Web & Programming:** React 18, TypeScript, Vite, Tailwind CSS, Node.js, Next.js, Python, REST APIs, HTML/CSS
-- **Automation & Tools:** Docker, Nginx, Google Apps Script, n8n, Power Automate, Apache JMeter, Git/GitHub
-- **Data & Business Intelligence:** Microsoft Power BI (DAX & Power Query), SAP Data Integration, SQL
+### Option 3: Run with Node.js (Vite)
+```bash
+cd website
+npm install
+npm run dev
+```

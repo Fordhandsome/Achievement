@@ -8,14 +8,15 @@ import {
   ShieldCheck,
   CheckCircle2
 } from 'lucide-react';
-import { ProjectCaseStudy } from '../data/portfolioData';
+import { ProjectCaseStudy, Language } from '../data/portfolioData';
 
 interface Props {
+  lang: Language;
   project: ProjectCaseStudy | null;
   onClose: () => void;
 }
 
-export default function CaseStudyModal({ project, onClose }: Props) {
+export default function CaseStudyModal({ lang, project, onClose }: Props) {
   const [slideIdx, setSlideIdx] = useState(0);
 
   useEffect(() => {
@@ -26,10 +27,10 @@ export default function CaseStudyModal({ project, onClose }: Props) {
     const handleKey = (e: KeyboardEvent) => {
       if (!project) return;
       if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowRight') {
+      if (e.key === 'ArrowRight' && project.gallery.length > 0) {
         setSlideIdx((prev) => (prev + 1) % project.gallery.length);
       }
-      if (e.key === 'ArrowLeft') {
+      if (e.key === 'ArrowLeft' && project.gallery.length > 0) {
         setSlideIdx((prev) => (prev - 1 + project.gallery.length) % project.gallery.length);
       }
     };
@@ -72,7 +73,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
             <button
               type="button"
               onClick={onClose}
-              aria-label="ปิดหน้าต่าง"
+              aria-label="Close"
               className="p-2 rounded-xl bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-sky-100 transition-colors shrink-0"
             >
               <X className="w-5 h-5" />
@@ -99,7 +100,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
                             (prev) => (prev - 1 + project.gallery.length) % project.gallery.length
                           )
                         }
-                        aria-label="ภาพก่อนหน้า"
+                        aria-label="Previous"
                         className="absolute left-3 p-2.5 rounded-full bg-white/95 border border-sky-200 text-slate-800 shadow-md hover:bg-sky-500 hover:text-white transition-colors"
                       >
                         <ChevronLeft className="w-5 h-5" />
@@ -109,7 +110,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
                         onClick={() =>
                           setSlideIdx((prev) => (prev + 1) % project.gallery.length)
                         }
-                        aria-label="ภาพถัดไป"
+                        aria-label="Next"
                         className="absolute right-3 p-2.5 rounded-full bg-white/95 border border-sky-200 text-slate-800 shadow-md hover:bg-sky-500 hover:text-white transition-colors"
                       >
                         <ChevronRight className="w-5 h-5" />
@@ -123,7 +124,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
                     {currentSlide.caption}
                   </p>
                   <span className="text-xs font-bold text-blue-600 shrink-0">
-                    รูปที่ {slideIdx + 1} / {project.gallery.length}
+                    {lang === 'en' ? 'Screen' : 'รูปที่'} {slideIdx + 1} / {project.gallery.length}
                   </span>
                 </div>
 
@@ -158,7 +159,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
             {/* Summary Banner */}
             <div className="p-4 rounded-xl bg-sky-50 border-l-4 border-blue-600">
               <div className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-1">
-                ผลลัพธ์จากการใช้งานจริง
+                {lang === 'en' ? 'Operational Outcome' : 'ผลลัพธ์จากการใช้งานจริง'}
               </div>
               <p className="text-sm sm:text-base font-bold text-slate-900">
                 {project.impactSummary}
@@ -169,13 +170,13 @@ export default function CaseStudyModal({ project, onClose }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-5">
                 <h4 className="text-sm sm:text-base font-bold text-blue-700 mb-1.5">
-                  1. ปัญหาหน้างานเดิม
+                  {lang === 'en' ? '1. Operational Challenge' : '1. ปัญหาหน้างานเดิม'}
                 </h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{project.situation}</p>
               </div>
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-5">
                 <h4 className="text-sm sm:text-base font-bold text-blue-700 mb-1.5">
-                  2. สิ่งที่เข้าไปทำแก้ไข
+                  {lang === 'en' ? '2. Engineering Solution' : '2. สิ่งที่พัฒนาและแก้ไข'}
                 </h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{project.solution}</p>
               </div>
@@ -183,7 +184,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
 
             <div>
               <h4 className="text-sm sm:text-base font-bold text-blue-700 mb-2.5">
-                3. รายละเอียดสิ่งที่ทำในระบบ
+                {lang === 'en' ? '3. Key System Capabilities' : '3. รายละเอียดฟีเจอร์ในระบบ'}
               </h4>
               <ul className="space-y-2">
                 {project.keyFeatures.map((feat) => (
@@ -214,7 +215,7 @@ export default function CaseStudyModal({ project, onClose }: Props) {
                   rel="noopener noreferrer"
                   className="btn-blue"
                 >
-                  <span>{project.liveLabel || 'เปิดเว็บจริง'}</span>
+                  <span>{project.liveLabel || (lang === 'en' ? 'Open Live App' : 'เปิดเว็บจริง')}</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               )}
