@@ -39,27 +39,15 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       gallery: [
         {
           src: 'assets/sop-live-create.png',
-          caption: 'Create SOP Screen: 5-step web form with auto-draft saving, real-time PDF preview, and direct submission to the approval workflow'
-        },
-        {
-          src: 'assets/sop-live-edit.png',
-          caption: 'Edit / Revision SOP Screen: Returned documents show reviewer comments, annotation points, and a button to re-submit to the reviewer'
-        },
-        {
-          src: 'assets/sop-drawio-workflow.png',
-          caption: 'Draw.io System Architecture Flowchart: 4-swimlane approval workflow (User, Reviewer, Approver, and Database / Automation routing)'
-        },
-        {
-          src: 'assets/sop-dark-drawio-workflow.png',
-          caption: 'Draw.io Process Lifecycle & Gate Review: Detailed state machine covering form generation, audit gate, revision loops, and digital stamping'
+          caption: 'Create SOP Screen (Entry): 5-step guided web form with auto-draft saving, real-time PDF preview, and direct submission for approval'
         },
         {
           src: 'assets/sop-live-signature.png',
-          caption: 'Digital Signature Settings: Draw on screen or upload an electronic signature image for SOP approval stamping'
+          caption: 'Approval & E-Signature Screen: Electronic signature pad modal allowing reviewers and approvers to verify and stamp SOP documents'
         },
         {
-          src: 'assets/sop-jmeter-100users.png',
-          caption: 'Apache JMeter Load Test Report: Tested with 100 concurrent users (1,100 requests, 0% error rate)'
+          src: 'assets/sop-drawio-workflow.png',
+          caption: 'System Workflow Diagram (Draw.io): Detailed 4-swimlane lifecycle (User, Reviewer, Approver, and Database / Automation routing)'
         }
       ],
       shortDesc:
@@ -89,27 +77,23 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'Internal web tool for office supply requisitions, electronic signatures, and barcode stock tracking',
       badge: 'Web App • Barcode & Stock',
       category: 'webapp',
-      coverImage: 'assets/hr-live-signature.png',
+      coverImage: 'assets/hr-live-inbound.png',
       gallery: [
         {
-          src: 'assets/hr-drawio-workflow.png',
-          caption: 'Draw.io System Flowchart: Barcode requisition workflow, inventory auto-reservation, PO-linked stock-in, and scanner dispatch'
+          src: 'assets/hr-live-inbound.png',
+          caption: 'Item Entry Screen (Stock-In): Form for linking incoming items to PO numbers and recording inventory quantities'
         },
         {
           src: 'assets/hr-live-signature.png',
-          caption: 'Requisition Summary & E-Signature Screen: Employees review requested items and sign on screen before submitting'
-        },
-        {
-          src: 'assets/hr-live-success.png',
-          caption: 'Requisition Confirmation Screen: Generates a requisition tracking number (REQ) and sends the request to the HR queue'
-        },
-        {
-          src: 'assets/hr-live-inbound.png',
-          caption: 'Stock-In (PO) Screen: Links incoming items to a Purchase Order (PO) number before scanning barcodes into stock'
+          caption: 'Requester Screen & E-Signature: Employees review requested items and sign directly on screen before submission'
         },
         {
           src: 'assets/hr-live-queue.png',
-          caption: 'HR Requisition Queue & Barcode Dispatch Screen: HR staff scan item barcodes to verify and record dispatches'
+          caption: 'Approval & Dispatch Screen: HR staff review pending requisitions and scan item barcodes to approve dispatch'
+        },
+        {
+          src: 'assets/hr-drawio-workflow.png',
+          caption: 'System Workflow Diagram (Draw.io): End-to-end flowchart from employee request, inventory reservation, to barcode verification'
         }
       ],
       shortDesc:
@@ -135,37 +119,43 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
     },
     {
       id: 'ocr-scanner',
-      title: 'HACO CARD — Business Card Scanner Web App',
-      subtitle: 'Mobile web tool built with Google Apps Script and AI OCR to save business card contacts to Google Sheets',
-      badge: 'Web App • Google Apps Script',
+      title: 'HACO Smart Scanner V30 — Enterprise Business Card AI Web App',
+      subtitle: 'Mobile & desktop web application built on Google Apps Script and Gemini / Gemma Multi-Model AI for single & bulk business card extraction into Google Sheets and Drive',
+      badge: 'Web App • Apps Script + Gemini AI',
       category: 'webapp',
       coverImage: 'assets/haco-card-scanner.png',
       coverFit: 'contain',
       gallery: [
         {
           src: 'assets/haco-card-scanner.png',
-          caption: 'HACO CARD employee login screen for mobile web access'
+          caption: 'Live Web UI: Employee authentication and smart card capture interface for mobile & desktop browsers'
+        },
+        {
+          src: 'assets/smart-scanner-drawio-workflow.png',
+          caption: 'System Workflow Diagram (Draw.io): 4-swimlane architecture covering Web Client, Google Apps Script Controller, Gemini 2.5 Flash / Gemma 3 Fallback Engine, and Google Workspace Store'
         }
       ],
       shortDesc:
-        'Built a mobile web application using Google Apps Script and AI OCR so employees can take photos of business cards and save extracted contact details into Google Sheets.',
-      impactSummary: 'Extracts contact details from card photos • Saves directly to Google Sheets • Mobile browser accessible',
+        'Engineered an enterprise web application using Google Apps Script and Google Gemini/Gemma Multi-Model AI to extract business card contacts into structured Google Sheets records and secure Google Drive photo vaults.',
+      impactSummary: 'Multimodal AI extraction (Gemini + Gemma fallback) • Single & bulk batch scanning • Google Workspace integration',
       metrics: [
-        { label: 'Platform', value: 'Google Apps Script' },
-        { label: 'Function', value: 'AI OCR Extraction' },
-        { label: 'Database', value: 'Google Sheets' }
+        { label: 'AI Architecture', value: 'Gemini + Gemma' },
+        { label: 'Batch Mode', value: 'Single & Bulk' },
+        { label: 'Data Store', value: 'Sheets + Drive' }
       ],
       situation:
-        'Sales and staff collected physical business cards from events and client visits, and typing contact information into spreadsheets manually took time.',
+        'Sales teams and management collected hundreds of physical business cards from trade fairs and client meetings; manual data entry into spreadsheets was slow and prone to typographical errors.',
       solution:
-        'Created a web app on Google Apps Script connected to an OCR API so staff can log in with their employee ID, photograph a business card on their phone, and store the contact fields in Google Sheets.',
+        'Architected a cloud web app on Google Apps Script featuring single and bulk camera uploads, automated bilingual OCR using Gemini 2.5 Flash with Gemma 3 fallback, structured validation, and automated storage in Google Sheets and Google Drive.',
       keyFeatures: [
-        'Employee ID login before accessing the web app',
-        'Supports mobile camera capture or uploading existing card photos',
-        'Extracts Thai and English text fields (Name, Company, Title, Phone, Email)',
-        'Saves structured records directly to Google Sheets'
+        'Multi-Model AI Orchestrator: Prioritizes ultra-fast Gemini 2.5 Flash (2-3s response) with seamless automatic failover to Gemma 3 27B-IT',
+        'Single & Bulk Batch Scanner: Supports live mobile camera capture and bulk batch uploads with asynchronous queue tracking',
+        'Bilingual Extraction: Accurately parses Thai and English names, corporate entities, phone numbers, emails, addresses, and websites into clean JSON',
+        'Google Workspace Ecosystem: Persists structured records into Google Sheets and backs up original card images into Google Drive with timestamped URLs',
+        'Analytics Dashboard & Inline Editor: Includes Chart.js analytics for department scans, search history, and modal inline record editing',
+        'Unit Test Suite: Built-in 7-suite automated unit tests covering authentication, database CRUD, and fallback routines'
       ],
-      techStack: ['Google Apps Script', 'OCR API', 'JavaScript', 'HTML/CSS', 'Google Sheets'],
+      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript'],
       liveUrl: 'https://script.google.com/macros/s/AKfycbxWMx3SEmyPvN6GiRFDCS2j-PuGGz66TgX9sq5bERcYhaHVfESCebi14limXNFElQML/exec',
       liveLabel: 'Open Live Web App ↗'
     },
@@ -290,27 +280,15 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       gallery: [
         {
           src: 'assets/sop-live-create.png',
-          caption: 'หน้าเว็บสร้างเอกสาร SOP (Create SOP): กรอกข้อมูล 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ'
-        },
-        {
-          src: 'assets/sop-live-edit.png',
-          caption: 'หน้าเว็บแก้ไขเอกสาร SOP (Edit / Revision SOP): แสดงคอมเมนต์และจุดที่ผู้ตรวจชี้แนะให้แก้ไข พร้อมปุ่มส่งกลับผู้ลงนามเดิม'
-        },
-        {
-          src: 'assets/sop-drawio-workflow.png',
-          caption: 'ผังสถาปัตยกรรมระบบ (Draw.io): แผนภาพ 4 สายงาน (User, Reviewer, Approver, Database) แสดงขั้นตอนการสร้าง ตรวจทาน และอนุมัติ'
-        },
-        {
-          src: 'assets/sop-dark-drawio-workflow.png',
-          caption: 'ผังวงจรชีวิตเอกสาร (Draw.io): แสดง State Machine ตั้งแต่สร้างเอกสาร ตรวจสอบความถูกต้อง การส่งกลับแก้ไข (Revision) และประทับตรา'
+          caption: 'หน้ากรอกข้อมูลสร้างเอกสาร (Create SOP): กรอกข้อมูล 5 ขั้นตอน พร้อมบันทึกแบบร่างอัตโนมัติ เปิดดู Preview PDF และปุ่มส่งเอกสารขออนุมัติ'
         },
         {
           src: 'assets/sop-live-signature.png',
-          caption: 'หน้าตั้งค่าลายเซ็นดิจิทัล (Digital Signature): วาดลายเซ็นบนหน้าจอหรืออัปโหลดไฟล์ลายเซ็นสำหรับใช้ประทับในเอกสาร SOP'
+          caption: 'หน้าอนุมัติและประทับลายเซ็นดิจิทัล: หน้าต่างสำหรับผู้ตรวจทานและผู้อนุมัติวาดลายเซ็นเพื่อประทับตราเอกสาร SOP'
         },
         {
-          src: 'assets/sop-jmeter-100users.png',
-          caption: 'ผลทดสอบ Load Test ด้วย Apache JMeter: จำลองผู้ใช้งานพร้อมกัน 100 คน (1,100 Requests, 0% Error)'
+          src: 'assets/sop-drawio-workflow.png',
+          caption: 'ผังสถาปัตยกรรมระบบการทำงาน (Draw.io): แผนภาพ 4 สายงาน (ผู้จัดทำ, ผู้ตรวจ, ผู้อนุมัติ, ฐานข้อมูล) แสดงวงจรการทำงานครบวงจร'
         }
       ],
       shortDesc:
@@ -340,27 +318,23 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'เว็บแอปสำหรับขอเบิกพัสดุออนไลน์ ลงลายมือชื่อบนหน้าจอ และใช้ปืนยิงบาร์โค้ดรับเข้า/จ่ายออก',
       badge: 'Web App • Barcode & Stock',
       category: 'webapp',
-      coverImage: 'assets/hr-live-signature.png',
+      coverImage: 'assets/hr-live-inbound.png',
       gallery: [
         {
-          src: 'assets/hr-drawio-workflow.png',
-          caption: 'ผังระบบงาน (Draw.io): แผนภาพขั้นตอนการขอเบิกพัสดุ จองยอดสต็อกล่วงหน้า การรับเข้าสต็อกผูก PO และการยิงบาร์โค้ดจ่ายของ'
+          src: 'assets/hr-live-inbound.png',
+          caption: 'หน้ากรอกรับของเข้าสต็อก (Stock-In): กรอกผูกเลขที่เอกสาร PO ก่อนเริ่มยิงบาร์โค้ดรับพัสดุเข้าคลัง'
         },
         {
           src: 'assets/hr-live-signature.png',
-          caption: 'หน้าสรุปรายการเบิกและลงลายมือชื่ออิเล็กทรอนิกส์: ตรวจสอบรายการและเซ็นชื่อบนหน้าจอก่อนยืนยันการเบิก'
-        },
-        {
-          src: 'assets/hr-live-success.png',
-          caption: 'หน้ายืนยันส่งคำขอเบิกสำเร็จ: ออกเลขใบเบิก (REQ) อัตโนมัติและส่งรายการเข้าคิวของเจ้าหน้าที่ HR'
-        },
-        {
-          src: 'assets/hr-live-inbound.png',
-          caption: 'หน้ารับของเข้าสต็อก (Stock-In): ผูกเลขที่เอกสาร PO ก่อนเริ่มยิงบาร์โค้ดรับพัสดุเข้าคลัง'
+          caption: 'หน้าผู้ร้องขอและลงลายมือชื่อ: ตรวจสอบรายการพัสดุที่ขอเบิกและเซ็นชื่ออิเล็กทรอนิกส์ยืนยันบนหน้าจอ'
         },
         {
           src: 'assets/hr-live-queue.png',
-          caption: 'หน้าคิวรอจ่ายพัสดุของเจ้าหน้าที่ HR: ใช้ปืนยิงบาร์โค้ดสแกนตรวจสอบรายการและตัดจ่ายพัสดุ'
+          caption: 'หน้าผู้อนุมัติและตัดจ่ายพัสดุ: เจ้าหน้าที่ HR ตรวจสอบคิวคำขอและใช้ปืนยิงบาร์โค้ดสแกนจ่ายของ'
+        },
+        {
+          src: 'assets/hr-drawio-workflow.png',
+          caption: 'ผังระบบงาน (Draw.io): แผนภาพขั้นตอนการขอเบิกพัสดุ จองยอดสต็อกล่วงหน้า การรับเข้าสต็อกผูก PO และการยิงบาร์โค้ดจ่ายของ'
         }
       ],
       shortDesc:
@@ -386,37 +360,43 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
     },
     {
       id: 'ocr-scanner',
-      title: 'HACO CARD — เว็บแอปสแกนนามบัตรด้วย Google Apps Script',
-      subtitle: 'เว็บแอปบนมือถือสำหรับถ่ายภาพนามบัตรและดึงข้อมูลติดต่อบันทึกลง Google Sheets',
-      badge: 'Web App • Google Apps Script',
+      title: 'HACO Smart Scanner V30 — เว็บแอปสแกนนามบัตร AI ระดับองค์กร (Google Apps Script)',
+      subtitle: 'เว็บแอปบนมือถือและคอมพิวเตอร์ พัฒนาด้วย Google Apps Script ผสาน Gemini 2.5 Flash / Gemma 3 Multi-Model AI สกัดข้อมูลนามบัตรบันทึกเข้า Google Sheets และ Drive',
+      badge: 'Web App • Apps Script + Gemini AI',
       category: 'webapp',
       coverImage: 'assets/haco-card-scanner.png',
       coverFit: 'contain',
       gallery: [
         {
           src: 'assets/haco-card-scanner.png',
-          caption: 'หน้าล็อกอินด้วยรหัสพนักงานสำหรับเข้าใช้งานเว็บแอป HACO CARD บนมือถือ'
+          caption: 'หน้าจอเว็บจริง: ระบบยืนยันตัวตนพนักงานและอินเทอร์เฟซสแกนนามบัตรอัจฉริยะ รองรับทั้งเบราว์เซอร์มือถือและคอมพิวเตอร์'
+        },
+        {
+          src: 'assets/smart-scanner-drawio-workflow.png',
+          caption: 'ผังสถาปัตยกรรมระบบการทำงาน (Draw.io): แผนภาพ 4 สายงาน (Web Client, Google Apps Script Controller, Gemini / Gemma AI Engine, Google Workspace Store)'
         }
       ],
       shortDesc:
-        'สร้างเว็บแอปพลิเคชันด้วย Google Apps Script ร่วมกับ AI OCR เพื่อช่วยดึงข้อมูลชื่อ บริษัท เบอร์โทรศัพท์ และอีเมลจากรูปถ่ายนามบัตรลงตาราง Google Sheets',
-      impactSummary: 'ดึงข้อมูลติดต่อจากรูปถ่ายนามบัตร • บันทึกลง Google Sheets อัตโนมัติ • เปิดใช้งานผ่านเบราว์เซอร์มือถือ',
+        'พัฒนาเว็บแอปพลิเคชันระดับองค์กรด้วย Google Apps Script ร่วมกับ Google Gemini/Gemma Multi-Model AI สกัดข้อมูลนามบัตรเป็นโครงสร้างบันทึกสู่ Google Sheets และจัดเก็บภาพต้นฉบับใน Google Drive อย่างปลอดภัย',
+      impactSummary: 'สกัดข้อมูลด้วย AI Multimodal (Gemini + Gemma สำรอง) • สแกนทั้งเดี่ยวและชุด (Bulk) • บันทึกลง Google Sheets และ Drive',
       metrics: [
-        { label: 'แพลตฟอร์ม', value: 'Google Apps Script' },
-        { label: 'การทำงาน', value: 'AI OCR' },
-        { label: 'ฐานข้อมูล', value: 'Google Sheets' }
+        { label: 'สถาปัตยกรรม AI', value: 'Gemini + Gemma' },
+        { label: 'โหมดการสแกน', value: 'Single & Bulk' },
+        { label: 'แหล่งจัดเก็บ', value: 'Sheets + Drive' }
       ],
       situation:
-        'เมื่อพนักงานได้รับนามบัตรจากการพบลูกค้าหรือออกงาน การนำข้อมูลมาพิมพ์ลงตารางทีละใบใช้เวลาและอาจเกิดการพิมพ์ผิดพลาด',
+        'ทีมขายและฝ่ายบริหารได้รับนามบัตรจำนวนมากจากงานแสดงสินค้าและการพบลูกค้า การพิมพ์ข้อมูลลงตารางด้วยตนเองใช้เวลานานและมีโอกาสตกหล่น',
       solution:
-        'พัฒนาเว็บแอปบน Google Apps Script เชื่อมต่อกับ OCR เพื่อให้พนักงานล็อกอินด้วยรหัสพนักงาน ถ่ายรูปนามบัตร และบันทึกข้อมูลลง Google Sheets',
+        'ออกแบบสถาปัตยกรรมเว็บแอปบน Google Apps Script รองรับการถ่ายภาพสแกนแบบเดี่ยวและชุด ประมวลผลด้วยโมเดล Gemini 2.5 Flash (ความเร็ว 2-3 วิ) พร้อมระบบ Fallback ไปยัง Gemma 3 อัตโนมัติ จัดเก็บข้อมูลแยกฟิลด์ลง Google Sheets และเซฟรูปภาพลง Google Drive',
       keyFeatures: [
-        'ระบบล็อกอินด้วยรหัสพนักงานก่อนเข้าใช้งาน',
-        'รองรับการถ่ายภาพจากกล้องมือถือหรืออัปโหลดรูปภาพนามบัตร',
-        'ดึงข้อความภาษาไทยและอังกฤษ แยกตามช่อง ชื่อ บริษัท ตำแหน่ง เบอร์โทร และอีเมล',
-        'บันทึกข้อมูลลงตาราง Google Sheets อัตโนมัติ'
+        'ระบบสลับโมเดล AI อัตโนมัติ (Multi-Model AI): เริ่มต้นด้วย Gemini 2.5 Flash และสลับไปใช้ Gemma 3 27B-IT ทันทีเมื่อเกิดปัญหา Quota/Rate Limit',
+        'รองรับการสแกนแบบเดี่ยวและเป็นชุด (Single & Bulk): รองรับการเปิดกล้องมือถือถ่ายทันที และการอัปโหลดไฟล์เป็นชุดพร้อมคิวประมวลผล',
+        'สกัดข้อมูลสองภาษา (Bilingual OCR): สกัดชื่อ, บริษัท, ตำแหน่ง, เบอร์โทร, อีเมล, ที่อยู่ และเว็บไซต์ทั้งไทย-อังกฤษ เป็นโครงสร้าง JSON สะอาด',
+        'ผสานระบบ Google Workspace: บันทึกข้อมูลลง Google Sheets และอัปโหลดไฟล์ภาพต้นฉบับเข้า Google Drive พร้อมสร้าง URL พรีวิวเฉพาะ',
+        'แดชบอร์ดสถิติและระบบแก้ไข: หน้า Dashboard สรุปข้อมูลด้วย Chart.js พร้อมระบบค้นหาย้อนหลังและหน้าต่างแก้ไขข้อมูล (Inline Edit)',
+        'ชุดทดสอบระบบอัตโนมัติ (Unit Tests): เขียนฟังก์ชันทดสอบ 7 ระบบหลัก (Auth, CRUD, Dashboard, Sheet) มั่นใจก่อนปล่อยใช้งานจริง'
       ],
-      techStack: ['Google Apps Script', 'OCR API', 'JavaScript', 'HTML/CSS', 'Google Sheets'],
+      techStack: ['Google Apps Script', 'Gemini 2.5 Flash', 'Gemma 3', 'Google Sheets DB', 'Google Drive API', 'Chart.js', 'JavaScript'],
       liveUrl: 'https://script.google.com/macros/s/AKfycbxWMx3SEmyPvN6GiRFDCS2j-PuGGz66TgX9sq5bERcYhaHVfESCebi14limXNFElQML/exec',
       liveLabel: 'เปิดเว็บแอปจริง ↗'
     },

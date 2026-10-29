@@ -79,6 +79,14 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Draw.io Architecture'
     },
     {
+      id: 'p-wf-smart-scanner',
+      category: 'workflow',
+      title: 'HACO Smart Scanner V30: Multi-Model AI Architecture (Draw.io)',
+      subtitle: '4-swimlane architecture: Web Client, Google Apps Script Controller, Gemini 2.5 Flash / Gemma 3 Engine, and Google Workspace Store',
+      src: 'assets/smart-scanner-drawio-workflow.png',
+      tag: 'Draw.io Architecture'
+    },
+    {
       id: 'p-web-hr-sig',
       category: 'webapp',
       title: 'Haco P&C Stock: Requisition Summary & E-Signature Pad',
@@ -222,6 +230,14 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       title: 'ผังสถาปัตยกรรมระบบสร้างเอกสารอัตโนมัติ (Draw.io)',
       subtitle: 'แผนภาพขั้นตอนการสร้างเอกสารอัตโนมัติจากแม่แบบและฐานข้อมูล',
       src: 'assets/doc-builder-drawio-workflow.png',
+      tag: 'Draw.io Architecture'
+    },
+    {
+      id: 'p-wf-smart-scanner',
+      category: 'workflow',
+      title: 'ผังสถาปัตยกรรม HACO Smart Scanner V30 (Draw.io)',
+      subtitle: 'ผังระบบ 4 สายงาน: Web Client, Google Apps Script Controller, Gemini 2.5 Flash / Gemma 3 Engine, Google Workspace Store',
+      src: 'assets/smart-scanner-drawio-workflow.png',
       tag: 'Draw.io Architecture'
     },
     {
