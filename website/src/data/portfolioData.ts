@@ -35,8 +35,12 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'AI-powered web application using Google Gemini Flash & Gemma Multi-Model AI for creating, auditing, revising, and approving SOP documents online',
       badge: 'Web App • Gemini & Gemma AI',
       category: 'webapp',
-      coverImage: 'assets/sop-live-create.png',
+      coverImage: 'assets/sop-home.png',
       gallery: [
+        {
+          src: 'assets/sop-home.png',
+          caption: 'SOP Web Portal Home: Unified document center with 3-tier workflow tracking and automated AI pre-check integration'
+        },
         {
           src: 'assets/sop-live-create.png',
           caption: 'Step 1 — Document Info: Guided web form with auto-draft saving and real-time readiness score'
@@ -67,19 +71,23 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         },
         {
           src: 'assets/sop-live-pin-comment.png',
-          caption: 'Reviewer Pin Annotation Workstation: Interactive PDF viewer where reviewers drop pin comments on specific lines (personal names masked)'
+          caption: 'Reviewer Pin Annotation Workstation: Interactive PDF viewer where reviewers drop pin comments on specific lines (test strings & personal names masked)'
         },
         {
           src: 'assets/sop-live-returned-view.png',
-          caption: 'Returned Document Feedback View: Displays reviewer pin locations, rejection reasons, and re-submission controls (personal names masked)'
+          caption: 'Returned Document Feedback View: Displays reviewer pin locations, rejection reasons, and re-submission controls (test strings & personal names masked)'
         },
         {
           src: 'assets/sop-live-edit.png',
-          caption: 'Inline Edit / Revision SOP Screen: Editing returned SOP content alongside reviewer comments before re-submitting'
+          caption: 'Inline Edit / Revision SOP Screen: Editing returned SOP content alongside reviewer comments before re-submitting (form inputs masked)'
         },
         {
           src: 'assets/sop-web-library-censored.png',
           caption: 'Central SOP Document Library: Departmental folder archive for approved SOPs (department names masked for privacy)'
+        },
+        {
+          src: 'assets/sop-jmeter-100users.png',
+          caption: 'Apache JMeter Load & Stress Test Report: 100 concurrent users benchmark with 1,100 transactions, 0.00% error rate, and 4.70ms latency (signatures masked)'
         }
       ],
       shortDesc:
@@ -296,8 +304,12 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
       subtitle: 'เว็บแอปพลิเคชันผสาน Google Gemini Flash & Gemma Multi-Model AI สำหรับร่างเนื้อหา ตรวจสอบความถูกต้อง แก้ไขงานตีกลับ และอนุมัติเอกสาร SOP',
       badge: 'Web App • Gemini & Gemma AI',
       category: 'webapp',
-      coverImage: 'assets/sop-live-create.png',
+      coverImage: 'assets/sop-home.png',
       gallery: [
+        {
+          src: 'assets/sop-home.png',
+          caption: 'หน้าหลักพอร์ทัล SOP: ศูนย์รวมเอกสาร ตรวจสอบสถานะการอนุมัติ 3 ฝ่าย และผสานขั้นตอน AI Pre-Check ตรวจสอบเนื้อหา'
+        },
         {
           src: 'assets/sop-live-create.png',
           caption: 'ขั้นตอนที่ 1 — ข้อมูลเอกสาร: ฟอร์มกรอกข้อมูลควบคุมเอกสารพร้อมบันทึกฉบับร่างอัตโนมัติ'
@@ -328,19 +340,23 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         },
         {
           src: 'assets/sop-live-pin-comment.png',
-          caption: 'หน้าตรวจทานและปักหมุดใส่ Comment บน PDF: ผู้ตรวจคลิกปักหมุดชี้จุดที่ต้องแก้บนหน้าเอกสารได้โดยตรง (เบลอชื่อบุคคลแล้ว)'
+          caption: 'หน้าตรวจทานและปักหมุดใส่ Comment บน PDF: ผู้ตรวจคลิกปักหมุดชี้จุดที่ต้องแก้บนหน้าเอกสารได้โดยตรง (เซ็นเซอร์ข้อมูลทดสอบและชื่อบุคคลแล้ว)'
         },
         {
           src: 'assets/sop-live-returned-view.png',
-          caption: 'หน้าแสดงจุดที่ถูกตีกลับแก้ไข (Pin Feedback): แสดงตำแหน่งหมุดและเหตุผลที่ผู้ตรวจชี้แนะพร้อมปุ่มส่งไฟล์แก้ไขใหม่ (เบลอชื่อบุคคลแล้ว)'
+          caption: 'หน้าแสดงจุดที่ถูกตีกลับแก้ไข (Pin Feedback): แสดงตำแหน่งหมุดและเหตุผลที่ผู้ตรวจชี้แนะพร้อมปุ่มส่งไฟล์แก้ไขใหม่ (เซ็นเซอร์ข้อมูลทดสอบและชื่อบุคคลแล้ว)'
         },
         {
           src: 'assets/sop-live-edit.png',
-          caption: 'หน้าแก้ไขเอกสาร SOP (Edit / Revision SOP): แก้ไขเนื้อหาตามจุดที่ผู้ตรวจคอมเมนต์และกดส่งอนุมัติซ้ำบนเว็บ'
+          caption: 'หน้าแก้ไขเอกสาร SOP (Edit / Revision SOP): แก้ไขเนื้อหาตามจุดที่ผู้ตรวจคอมเมนต์และกดส่งอนุมัติซ้ำบนเว็บ (เซ็นเซอร์ช่องข้อมูลแล้ว)'
         },
         {
           src: 'assets/sop-web-library-censored.png',
           caption: 'หน้าคลังเอกสาร SOP (Document Library): จัดเก็บเอกสารแยกโฟลเดอร์ตามแผนก (เซ็นเซอร์ชื่อแผนกแล้ว)'
+        },
+        {
+          src: 'assets/sop-jmeter-100users.png',
+          caption: 'ผลการทดสอบประสิทธิภาพ Apache JMeter: ทดสอบโหลดผู้ใช้งานพร้อมกัน 100 คน (1,100 รายการ, Error 0.00%, ความเร็วเฉลี่ย 4.70ms) (เซ็นเซอร์ชื่อผู้ตรวจรับรองแล้ว)'
         }
       ],
       shortDesc:
