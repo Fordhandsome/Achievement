@@ -84,10 +84,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-web-library-censored.png',
           caption: 'Central SOP Document Library: Departmental folder archive for approved SOPs (department names masked for privacy)'
-        },
-        {
-          src: 'assets/sop-jmeter-100users.png',
-          caption: 'Apache JMeter Load & Stress Test Report: 100 concurrent users benchmark with 1,100 transactions, 0.00% error rate, and 4.70ms latency (signatures masked)'
         }
       ],
       shortDesc:
@@ -353,10 +349,6 @@ export const PROJECTS_BY_LANG: Record<Language, ProjectCaseStudy[]> = {
         {
           src: 'assets/sop-web-library-censored.png',
           caption: 'หน้าคลังเอกสาร SOP (Document Library): จัดเก็บเอกสารแยกโฟลเดอร์ตามแผนก (เซ็นเซอร์ชื่อแผนกแล้ว)'
-        },
-        {
-          src: 'assets/sop-jmeter-100users.png',
-          caption: 'ผลการทดสอบประสิทธิภาพ Apache JMeter: ทดสอบโหลดผู้ใช้งานพร้อมกัน 100 คน (1,100 รายการ, Error 0.00%, ความเร็วเฉลี่ย 4.70ms) (เซ็นเซอร์ชื่อผู้ตรวจรับรองแล้ว)'
         }
       ],
       shortDesc:

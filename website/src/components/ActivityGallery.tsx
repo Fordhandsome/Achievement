@@ -47,14 +47,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       tag: 'Library Archive UI'
     },
     {
-      id: 'p-web-sop-jmeter',
-      category: 'webapp',
-      title: 'Apache JMeter Load Test: 100 Concurrent Users',
-      subtitle: 'Load-tested with 100 concurrent users and 1,100 requests (0% error rate)',
-      src: 'assets/sop-jmeter-100users.png',
-      tag: 'JMeter Load Test'
-    },
-    {
       id: 'p-web-hr-sig',
       category: 'webapp',
       title: 'Haco P&C Stock: Requisition Summary & E-Signature Pad',
@@ -183,14 +175,6 @@ const PHOTOS_BY_LANG: Record<Language, GalleryPhoto[]> = {
       subtitle: 'ระบบจัดเก็บเอกสาร SOP แยกตามแผนกสำหรับพนักงานค้นหา (เซ็นเซอร์ข้อมูลเอกสารและคลังทั้งหมด 100% เพื่อความปลอดภัย)',
       src: 'assets/sop-web-library-censored.png',
       tag: 'Library Archive UI'
-    },
-    {
-      id: 'p-web-sop-jmeter',
-      category: 'webapp',
-      title: 'ผลทดสอบ Apache JMeter: ทดสอบผู้ใช้งานพร้อมกัน 100 Users',
-      subtitle: 'จำลองการเข้าใช้งานพร้อมกัน 100 คน ยิงทดสอบ 1,100 Requests (0% Error)',
-      src: 'assets/sop-jmeter-100users.png',
-      tag: 'JMeter Load Test'
     },
     {
       id: 'p-web-hr-sig',
